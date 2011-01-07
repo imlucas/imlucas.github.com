@@ -172,9 +172,14 @@ $(function(){
                     if(data.response.blogs){   
                         _.each(data.response.blogs, function(blog){
                             var _host = _blog_host(blog.url);
+                            if(_host == 'last.fm'){
+                                _log('Skipping last.fm journal post');
+                                return;
+                            }
+                            
                             var existing_blog = _artist.get('blogs').contains('host', _host);
                             var _blog = null;
-                        
+                            
                             if(existing_blog){
                                 _blog = existing_blog;
                             }
