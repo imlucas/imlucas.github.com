@@ -126,10 +126,13 @@ $(function(){
             this.blogModel.view = this;
             
         },
-        render: function() {
+        render: function(hidden) {
             _log('ArtistBlogView#render');
             var h = this.template(this.blogModel.toJSON());
             $(this.el).html(h);
+            if(hidden){
+                $(this.el).hide();
+            }
             return h;
         },
         remove: function() {
@@ -165,26 +168,24 @@ $(function(){
                     _log('Artist#fetchBlogs: Fetched '+data.response.blogs.length+' blogs');
                     var _blogs = [];
                     var _hosts = [];
-                    if(!data.response.blogs){
-                        return;
+                    if(data.response.blogs){   
+                        _.each(data.response.blogs, function(blog){
+                            var _host = _blog_host(blog.url);
+                            var existing_blog = _artist.get('blogs').contains('host', _host);
+                            var _blog = null;
+                        
+                            if(existing_blog){
+                                _blog = existing_blog;
+                            }
+                            else {
+                                _blog = new Blog({'name': blog.name, 'url': blog.url});
+                                _log('Artist#fetchBlogs: Add blog: '+_blog);
+                                _artist.get('blogs').add(_blog);
+                            }
+                            _blog.artistAppeared(_artist);
+                        
+                        });
                     }
-                    _.each(data.response.blogs, function(blog){
-                        var _host = _blog_host(blog.url);
-                        var existing_blog = _artist.get('blogs').contains('host', _host);
-                        var _blog = null;
-                        
-                        if(existing_blog){
-                            _blog = existing_blog;
-                        }
-                        else {
-                            _blog = new Blog({'name': blog.name, 'url': blog.url});
-                            _log('Artist#fetchBlogs: Add blog: '+_blog);
-                            _artist.get('blogs').add(_blog);
-                        }
-                        _blog.artistAppeared(_artist);
-                        
-                    });
-                    
                     _artist.view.renderBlogs();
                 },
                 'dataType' : 'jsonp',
@@ -215,6 +216,10 @@ $(function(){
           this.model.bind('change', this.render);
           this.model.view = this;
         },
+        events: {
+            "click .blogs .blog-list .more a": "showMoreBlogs",
+            "click .blogs .blog-list .less a": "showMoreBlogs"
+        },
         render: function() {
           $(this.el).html(this.template(this.model.toJSON()));
           return this;
@@ -226,13 +231,32 @@ $(function(){
             _log('ArtistView#renderBlogs: '+this.model.get('blogs'));
             var _b = $(this.el).find('.blogs');
             var _blog_list = _b.find('ul');
-            this.model.get('blogs').each(function(blog){
+            //_blog_list.hide();
+            this.model.get('blogs').each(function(blog, index){
+                blog.set({'index': index});
                 var view = new ArtistBlogView({blogModel: blog});
                 var e = view.render();
                 _blog_list.append(e); // @todo (lucas) Slow.
             });
-            _b.removeClass('loading');
+            if(this.model.get('blogs').length > 3){
+                _b.find('div.more').show();
+            }
+            _b.removeClass('loading').addClass('loaded');
+            //_blog_list.slideDown('fast');
             return this;
+        },
+        showMoreBlogs: function(e){
+            var el = $(this.el);
+            if(el.find('.more').is(':visible')){
+                el.find('li').show();
+                el.find('.more').hide();
+                el.find('.less').show();
+            }
+            else{
+                el.find('li.bonus').hide();
+                el.find('.more').show();
+                el.find('.less').hide();
+            }
         }
     });
     

@@ -5,8 +5,14 @@
         <style type="text/css">
             .name{ /* For Dan P!*/
                 line-height: 30px !important;
-                
             }
+            div.blogs.loading .blog-list{
+                display: none;
+            }
+            div.blogs.loaded .loading-message{
+                display: none;
+            }
+            
         </style>
         <link rel="stylesheet" href="http://ex.fm/static/css/labs/blog-finder.css?v=63f03" type="text/css" media="screen" charset="utf-8" /> 
     </head> 
@@ -81,15 +87,26 @@
                 <div class="right" style="background:url(images/loading.gif) no-repeat 5px 36px">
                     <h3 class="name"><%= name %></h2>
                     <div class="blogs" class="loading">
-                        <em>Recently featured on these blogs:</em>
-                        <ul></ul>
+                        <div class="loading-message">
+                            Finding zee blogs...
+                        </div>
+                        <div class="blog-list">
+                            <em>Recently featured on these blogs:</em>
+                            <ul></ul>
+                            <div class="more" style="display: none;">
+                                <a href="javascript:void(0);">Show more</a>
+                            </div>
+                            <div class="less" style="display: none;">
+                                <a href="javascript:void(0);">Show less</a>
+                            </div>
+                        </div>
 	                </div>
                 </div>
                 <br class="clear">
             </div>
         </script>
         <script type="text/template" id="artist-blog-template">
-            <li>
+            <li<% if(index > 2) { %> style="display: none;" class="bonus"<% } %>>
             <a class="title" target="_blank" href="http://<%= host %>"><%= host %></a>
             <a class="post" target="_blank" href="<%= url %>"><%= name %></a>
             </li>
