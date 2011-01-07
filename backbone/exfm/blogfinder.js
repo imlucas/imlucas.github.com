@@ -82,7 +82,7 @@ $(function(){
             'name': 'A blog',
             'url': 'http://www.ablog.com',
             'host': 'ablog.com',
-            'count': 0,
+            'count': 1,
             'artists': []
         },
         initialize: function(){
@@ -92,10 +92,11 @@ $(function(){
         },
         artistAppeared: function(artist){
             //this.get('artists').add(artist);
-            this.count += 1;
+            var c = this.get('count');
+            this.set({'count': c+1});
         },
         toString: function(){
-            return "Blog({name:'"+this.get('name')+"'})";
+            return "Blog({name:'"+this.get('name')+"', host:'"+this.get('host')+"', count: '"+this.get('count')+"'})";
         }
     });
     
@@ -228,7 +229,7 @@ $(function(){
           $(this.el).remove();
         },
         renderBlogs: function(){
-            _log('ArtistView#renderBlogs: '+this.model.get('blogs'));
+            _log('ArtistView#renderBlogs');
             var _b = $(this.el).find('.blogs');
             var _blog_list = _b.find('ul');
             //_blog_list.hide();
@@ -316,21 +317,58 @@ $(function(){
             _log('done with submit.  returing false to stop prop.');
             return false;
         },
+        addBlog: function(blog){
+            var _b = $('#blognum');
+            _b.html(parseInt(_b.html())+1);
+        },
+        blogsSorted: function(blogs){
+            var _topBlogs = blogs.models.slice(0, 3);
+            var el = $('#top-blogs');
+            el.html('');
+            _.each(_topBlogs, function(top){
+                el.append('<div><a href="http://'+top.get('host')+'" target="_blank">'+top.get('host')+' ('+top.get('count')+')</a></div>');
+            });
+        }
     });
     
     var BlogFinder = Backbone.Controller.extend({
         initialize: function(){
+            _.bindAll(this, 'setArtists');
             this._view = new BlogFinderView;
             this._user = null;
+            this._blogs = new BlogList;
         },
         routes: {
             'lastfm/:username': 'lastfmUser',
             'lastfm/:username/:period': 'lastfmUser',
         },
+        _blogAdded: function(blog){
+            _log('BlogFinder#_blogAdded');
+            var _b = this._blogs.contains('host', blog.get('host'));
+            
+            if(!_b){
+                _log('BlogFinder#_blogAdded: Dont have that one yet...');
+                this._blogs.add(blog);
+                this._view.addBlog(blog);
+            }
+            else{
+                var v = _b.get('count');
+                _b.set({'count': v+1});
+                _log('BlogFinder#_blogAdded: inc to '+(v+1));
+            }
+            
+            this._blogs.sort();
+            this._view.blogsSorted(this._blogs);
+        },
         setArtists: function(artists){
             _log('BlogFinder#setArtists called');
+            var _app = this;
             _.each(artists, function(artist){
                 _log('Adding artist to collection.');
+                artist.get('blogs').bind('add', function(blog){
+                    _app._blogAdded(blog);
+                });
+                
                 window.Artists.add(artist);
                 artist.fetchBlogs();
             });
