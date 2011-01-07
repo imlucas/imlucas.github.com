@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html> 
+    <head> 
+        <title>The Super Awesome Music Blog Finder Thingy &trade; - exfm labs</title> 
+        <link rel="stylesheet" href="http://ex.fm/static/css/labs/blog-finder.css?v=63f03" type="text/css" media="screen" charset="utf-8" /> 
+    </head> 
+    <body>
+        <div id="blogfinderapp">
+            <div id="intro"> 
+                <div id="header"> 
+                    <h1>The Super Awesome Music Blog Finder Thingy &trade;</h1>
+                </div> 
+                <div id="introcontainer"> 
+                    <div id="info"> <p>Intro</p></div> 
+                    <div id="userform"> 
+                        <form id="lastfm-form"> 
+                            <label>Enter Last.fm username</label> 
+                            <input placeholder="username" type="text" id="username" name="username" value=""/> 
+                            <input id="submitbtn" type="submit" value="Ready, Set, Go!"/> 
+                        </form> 
+                    </div> 
+                    <br class="clear" /> 
+                </div> 
+            </div>
+            
+            <div id="container"> 
+                <div id="resultinfo"> 
+                    <div id="resultinfoleft"> 
+                        <h2>Success!</h2> 
+                        <p>
+                            <span id="blogcount">
+                                <b id="blognum">...</b> blogs
+                            </span>
+                        </p> 
+                    </div> 
+                    <div id="resultinforight">&nbsp;</div> 
+                    <br class="clear" /> 
+                </div> 
+                <div id="results"> 
+                    <div id="filter"> 
+                        <span id="filterinfo">
+                            Based off 
+                           <span id="filteruser">your</span>
+                           25 most played artists in the last
+                        </span> 
+                        <a id="7day">Week</a>
+                        <a id="3month">3 Months</a>
+                        <a id="12month">Year</a>
+                    </div>
+                    <div id="artist-list">&nbsp;</div>
+                </div> 
+                <div id="friends"> 
+                    <h2>Your last.fm friends</h2> 
+                    <div id="friend-list"></div>
+                </div>
+                
+                <br class="clear" /> 
+            </div> 
+        </div>
+
+        <script src="../json2.js"></script> 
+        <script src="../jquery.js"></script> 
+        <script src="../underscore.js"></script> 
+        <script src="../backbone.js"></script> 
+        <script src="../backbone-localstorage.js"></script> 
+        <script src="blogfinder.js"></script> 
+        
+        <!-- Templates --> 
+ 
+        <script type="text/template" id="artist-template">
+            <div class="artist" id="artist-<%= cId %>">
+                <div class="left">
+                    <img src="<%= image %>" />
+                </div>
+                <div class="right" style="background:url(images/loading.gif) no-repeat 5px 36px">
+                    <h3 class="name"><%= name %></h2>
+                    <div class="blogs" class="loading">
+                        <em>Recently featured on these blogs:</em>
+                        <ul></ul>
+	                </div>
+                </div>
+                <br class="clear">
+            </div>
+        </script>
+        <script type="text/template" id="artist-blog-template">
+            <li>
+            <a class="title" target="_blank" href="http://<%= host %>"><%= host %></a>
+            <a class="post" target="_blank" href="<%= url %>"><%= name %></a>
+            </li>
+        </script>
+    </body> 
+</html> 
