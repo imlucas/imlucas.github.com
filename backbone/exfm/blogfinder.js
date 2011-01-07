@@ -165,7 +165,9 @@ $(function(){
                     _log('Artist#fetchBlogs: Fetched '+data.response.blogs.length+' blogs');
                     var _blogs = [];
                     var _hosts = [];
-                    
+                    if(!data.response.blogs){
+                        return;
+                    }
                     _.each(data.response.blogs, function(blog){
                         var _host = _blog_host(blog.url);
                         var existing_blog = _artist.get('blogs').contains('host', _host);
