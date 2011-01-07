@@ -101,10 +101,8 @@ $(function(){
     
     Backbone.Collection = Backbone.Collection.extend({
         contains: function(key, value){
-            return _(this.models.pluck(key), filter(f){
-                return f===key;
-            });
-            
+            var index = this.pluck(key).indexOf(value);
+            return (index > -1) ? this.at(index) : null;
         }
     });
     
@@ -169,11 +167,22 @@ $(function(){
                     var _hosts = [];
                     
                     _.each(data.response.blogs, function(blog){
-                        var _blog = new Blog({'name': blog.name, 'url': blog.url});
+                        var _host = _blog_host(blog.url);
+                        var existing_blog = _artist.get('blogs').contains('host', _host);
+                        var _blog = null;
+                        
+                        if(existing_blog){
+                            _blog = existing_blog;
+                        }
+                        else {
+                            _blog = new Blog({'name': blog.name, 'url': blog.url});
+                            _log('Artist#fetchBlogs: Add blog: '+_blog);
+                            _artist.get('blogs').add(_blog);
+                        }
                         _blog.artistAppeared(_artist);
-                        _log('Artist#fetchBlogs: Add blog: '+_blog);
-                        _artist.get('blogs').add(_blog);
+                        
                     });
+                    
                     _artist.view.renderBlogs();
                 },
                 'dataType' : 'jsonp',
