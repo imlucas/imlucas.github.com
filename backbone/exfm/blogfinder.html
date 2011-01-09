@@ -113,5 +113,15 @@
             <a class="post" target="_blank" href="<%= url %>"><%= name %></a>
             </li>
         </script>
+        <script type="text/template" id="top-blog">
+                <a href="http://<%= host %>" target="_blank">
+                    <%= host %> (<%= count %>)
+                </a>
+                <ul class="blog-artists">
+                    <% _.each(artists, function(artist)){ %>
+                        <li><%= artist.get('name') %></li>
+                    <% }); %>
+                </ul>
+        </script>
     </body> 
 </html> 
