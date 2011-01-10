@@ -3,7 +3,7 @@
 
 $(function(){
     var _has_console = typeof console != 'undefined';
-    var _alert_on_no_console = true;
+    var _alert_on_no_console = false;
     var _log = function(what){
         if(_has_console){
             console.log(what);

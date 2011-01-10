@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
 <html> 
     <head> 
-        <title>The Super Awesome Music Blog Finder Thingy &trade; - exfm labs</title> 
+        <title>The Super Awesomer Music Blog Finder Thingy &trade; - exfm labs</title> 
         <style type="text/css">
             .name{ /* For Dan P!*/
                 line-height: 30px !important;
@@ -48,10 +48,39 @@
         <div id="blogfinderapp">
             <div id="intro"> 
                 <div id="header"> 
-                    <h1>The Super Awesome Music Blog Finder Thingy &trade;</h1>
+                    <h1>The Super Awesome<span style="color: red;">r</span> Music Blog Finder Thingy &trade;</h1>
                 </div> 
                 <div id="introcontainer"> 
-                    <div id="info"> <p>Intro</p></div> 
+                    <div id="info">
+                        <p>
+                            Getting tired of the same ol' music blogs you've 
+                            been visiting now for ages? Just enter your 
+                            <a href="http://last.fm/" target="_blank">
+                                    Last.fm
+                            </a> 
+                            username and start exploring new blogs! 
+                            Blogs you've never even heard of!
+                            <b>TSAMBFT&trade;</b> will titillate 
+                            those ears in no time!
+                        </p> 
+                        <div class='credits'> 
+                            <p>
+                                <a id="exfmlogo" href="http://ex.fm/">
+                                    <img src="http://ex.fm/static/images/blog-finder-exfm.png?v=63d69" />
+                                </a>
+                                Whipped up by the team at 
+                                <a href="http://ex.fm/">ex.fm</a> with sexy 
+                                api's provided by 
+                                <a href="http://the.echonest.com/">the 
+                                    Echo Nest
+                                </a> and 
+                                <a href="http://last.fm/">
+                                    Last.fm
+                                </a>.
+                            </p> 
+                            <br class="clear"> 
+                        </div> 
+                    </div> 
                     <div id="userform"> 
                         <form id="lastfm-form"> 
                             <label>Enter Last.fm username</label> 
@@ -66,15 +95,34 @@
             <div id="container"> 
                 <div id="resultinfo"> 
                     <div id="resultinfoleft"> 
-                        <h2>Party!</h2> 
+                        <h2>Party!</h2>
                         <p>
-                            We found <span id="blogcount">
-                                <b id="blognum">0</b> blogs
-                            </span> that have written about bands you like.
+                            With the help of a couple of fancy API's, we found 
+                            <span id="blogcount"><b id="blognum">0</b> blogs 
+                            </span>
+                            based <br />off of what you've been listening to 
+                            over the last <span id="timeframe">3 Months</span>.     
+                            <br /> 
+                            Down below, you'll see a list next to each artist 
+                            with relevant blogs along with a specific post about 
+                            the artist. Happy finding! <br />
+                            <span id="caveat">
+                                Results will vary with time, and you'll 
+                                invariably come across a lame site. Fret not!
+                                There are heaps of more great sites to discover!
+                            </span>
                         </p> 
-                        
                     </div> 
-                    <div id="resultinforight">&nbsp;</div> 
+                    <div id="resultinforight">
+                        <div id="twitterbtn">
+                            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ex.fm/labs/blogfinder" data-count="horizontal" data-via="exfm">
+                                Tweet
+                            </a> 
+                            <iframe id="fbbtn" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fex.fm%2Flabs%2Fblogfinder&amp;layout=button_count&amp;show_faces=false&amp;width=150&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe> 
+                        </div> 
+                    The easiest way to play music from blogs- <b>exfm</b>!
+                    <a id="getexfm" href="http://bit.ly/fJcWQp">Install exfm now</a>                         
+                    </div> 
                     <br class="clear" /> 
                 </div> 
                 <div id="results"> 
@@ -96,14 +144,28 @@
                 <br class="clear" /> 
             </div> 
         </div>
-
+        <div id="footer"> 
+            <div id="footerRight"> 
+            <a href="http://www.facebook.com/pages/ExtensionFM/312730075862" id="bottomrightfacebook"></a> 
+            <a href="http://twitter.com/exfm" id="bottomrighttwitter"></a> 
+            </div> 
+            <a href="/about" class="bottomlink">About</a> 
+            <a href="http://support.extension.fm" class="bottomlink">Support</a> 
+            <a href="http://blog.extension.fm/faq" class="bottomlink">FAQ</a> 
+            <a href="/privacy" class="bottomlink">Privacy</a> 
+            <a href="/terms" class="bottomlink">Terms of Service</a> 
+            <a href="http://blog.extension.fm" class="bottomlink">Blog</a> 
+            <a href="/labs" class="bottomlink">Labs</a> 
+            <a href="/jobs" class="bottomlink">Jobs</a> 
+            <div id="copyright">&copy; 2011 Extension Entertainment Inc. - All Rights Reserved</div> 
+        </div> 
         <script src="../json2.js"></script> 
         <script src="../jquery.js"></script> 
         <script src="../underscore.js"></script> 
         <script src="../backbone.js"></script> 
         <script src="../backbone-localstorage.js"></script> 
         <script src="blogfinder.js"></script> 
-        
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
         <!-- Templates --> 
  
         <script type="text/template" id="top-blog-template">
