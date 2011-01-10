@@ -12,7 +12,35 @@
             div.blogs.loaded .loading-message{
                 display: none;
             }
-            
+            ul.blog-artists{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                margin-top: 10px;
+            }
+            ul.blog-artists li{
+                width: 45%;
+                float: left;
+                margin-bottom: 5px;
+            }
+            ul.blog-artists li .img-wrapper{
+                float: left;
+                height: 30px;
+                width: 52px;
+                max-height: 30px;
+                max-width: 52px;
+                overflow: hidden;
+                margin-right: 5px;
+            }
+            ul.blog-artists li .img-wrapper img{
+               
+            }
+            .top-blog{
+                clear: both;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #CCC;
+            }
         </style>
         <link rel="stylesheet" href="http://ex.fm/static/css/labs/blog-finder.css?v=63f03" type="text/css" media="screen" charset="utf-8" /> 
     </head> 
@@ -38,14 +66,13 @@
             <div id="container"> 
                 <div id="resultinfo"> 
                     <div id="resultinfoleft"> 
-                        <h2>Success!</h2> 
+                        <h2>Party!</h2> 
                         <p>
                             We found <span id="blogcount">
-                                <b id="blognum">0</b> blogs.
-                            </span>
+                                <b id="blognum">0</b> blogs
+                            </span> that have written about bands you like.
                         </p> 
-                        <p>And the top three blogs are:</p>
-                        <div id="top-blogs"></div>
+                        
                     </div> 
                     <div id="resultinforight">&nbsp;</div> 
                     <br class="clear" /> 
@@ -61,6 +88,7 @@
                         <a id="3month">3 Months</a>
                         <a id="12month">Year</a>
                     </div>
+                    <div id="top-blogs"></div>
                     <div id="artist-list">&nbsp;</div>
                 </div> 
                 <div id="friends"> 
@@ -86,7 +114,7 @@
                 <div class="left">
                     <img src="<%= image %>" />
                 </div>
-                <div class="right" style="background:url(images/loading.gif) no-repeat 5px 36px">
+                <div class="right">
                     <h3 class="name"><%= name %></h2>
                     <div class="blogs" class="loading">
                         <div class="loading-message">
@@ -113,15 +141,17 @@
             <a class="post" target="_blank" href="<%= url %>"><%= name %></a>
             </li>
         </script>
-        <script type="text/template" id="top-blog">
+        <script type="text/template" id="top-blog-template">
+            <div class="top-blog">
                 <a href="http://<%= host %>" target="_blank">
-                    <%= host %> (<%= count %>)
-                </a>
-                <ul class="blog-artists">
-                    <% _.each(artists, function(artist)){ %>
-                        <li><%= artist.get('name') %></li>
-                    <% }); %>
-                </ul>
+                    <%= host %>
+                </a> has written about <%= artists.length %> band<% if( artists.length > 1){ %>s<% } %> you like
+                <ul class="blog-artists"></ul>
+                <br class="clear" />
+            </div>
+        </script>
+        <script type="text/template" id="top-blog-artist-template">
+            <li><div class="img-wrapper"><img src="<%= image_small %>" /></div><%= name %></li>
         </script>
     </body> 
 </html> 
