@@ -41,6 +41,28 @@
                 padding-bottom: 15px;
                 border-bottom: 1px solid #CCC;
             }
+            
+            #history{
+                float: left;
+                margin-top: 14px;
+                width: 160px;
+                border: 1px solid #F1F1F1;
+                padding: 14px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+                border-top-left-radius: 5px 5px;
+                border-top-right-radius: 5px 5px;
+                border-bottom-right-radius: 5px 5px;
+                border-bottom-left-radius: 5px 5px;
+            }
+            
+            #history h2{
+                color: #666;
+                font-size: 16px;
+                font-weight: normal;
+                margin-top: 0px;
+            }
         </style>
         <link rel="stylesheet" href="http://ex.fm/static/css/labs/blog-finder.css?v=63f03" type="text/css" media="screen" charset="utf-8" /> 
     </head> 
@@ -140,7 +162,10 @@
                     <h2>Last.fm friends</h2> 
                     <div id="friend-list"></div>
                 </div>
-                
+                <div id="history"> 
+                    <h2>Recently Viewed</h2> 
+                    <div id="history-list"></div>
+                </div>
                 <br class="clear" /> 
             </div> 
         </div>
@@ -157,7 +182,8 @@
             <a href="http://blog.extension.fm" class="bottomlink">Blog</a> 
             <a href="/labs" class="bottomlink">Labs</a> 
             <a href="/jobs" class="bottomlink">Jobs</a> 
-            <div id="copyright">&copy; 2011 Extension Entertainment Inc. - All Rights Reserved</div> 
+            <div id="copyright">
+                &copy; 2011 Extension Entertainment Inc. - All Rights Reserved</div> 
         </div> 
         <script src="../json2.js"></script> 
         <script src="../jquery.js"></script> 
@@ -191,6 +217,13 @@
                 <div class="friendImage" style="background-image:url(<%= image %>);"> 
                 </div>    
                 <a href="#lastfm/<%= username %>/3month"><% if(realname){ %><%= realname %><%}else{%><%= username %><%}%></a>
+                <br class="clear">
+            </div>
+        </script>
+        
+        <script type="text/template" id="history-item-template">
+            <div class="friend">
+                <a href="#lastfm/<%= username %>/<%= period %>"><%= username %> <%= period %></a>
                 <br class="clear">
             </div>
         </script>

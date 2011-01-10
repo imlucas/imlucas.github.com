@@ -90,6 +90,11 @@ $(function(){
         'username': 'A last.fm user',
         'image': '',
     });
+    
+    var HistoryItem = Backbone.Model.extend({
+        'username': 'A last.fm user',
+        'period': '3month'
+    });
 
     var Blog = Backbone.Model.extend({
         defaults: {
@@ -148,6 +153,10 @@ $(function(){
         }
     });
     
+    var HistoryItemList = Backbone.Collection.extend({
+        model: HistoryItem
+    });
+    
     var BlogList = Backbone.Collection.extend({
         model: Blog,
         comparator: function(blog){
@@ -190,6 +199,12 @@ $(function(){
         template: _.template($('#friend-template').html()),
     });
     
+    var HistoryItemView = Backbone.ModelView.extend({
+        tagname: "div",
+        template: _.template($('#history-item-template').html()),
+    });
+    
+    
     var BlogFinderView = Backbone.View.extend({
         el: $("#blogfinderapp"),
         _controller_listener: null,
@@ -199,9 +214,15 @@ $(function(){
         initialize: function(opts) {
           _log('BlogFinderView#initialize');
           this._user = opts._user;
+          this._history = opts._history;
           
-          _.bindAll(this, 'friendsRefreshed');
+          _.bindAll(this, 'friendsRefreshed', 'historyAdded');
           this._user.get('friends').bind('refresh', this.friendsRefreshed);
+          this._history.bind('add', this.historyAdded);
+        },
+        historyAdded: function(historyItem){
+            var view = new HistoryItemView({model: historyItem});
+            $('#history-list').prepend(view.render().el);
         },
         lastfmUser: function(username, period){
             if($('#intro').is(':visible')){
@@ -254,7 +275,8 @@ $(function(){
             _.bindAll(this, '_artistsChanged', '_blogsChanged', '_blogAdded');
             this._user = new User;
             this._blogs = new BlogList;
-            this._view = new BlogFinderView({_user: this._user});
+            this._history = new HistoryItemList;
+            this._view = new BlogFinderView({_user: this._user, _history: this._history});
             this._user.bind('change:artists', this._artistsChanged);
         },
         routes: {
@@ -271,6 +293,7 @@ $(function(){
             this._fetchUserFriends();
             
             this._view.lastfmUser(username, period);
+            this._history.add(new HistoryItem({'username': username, 'period': period}));
             this.saveLocation('lastfm/'+username+'/'+period);
         },
         _artistsChanged: function(){
