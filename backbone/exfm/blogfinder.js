@@ -190,17 +190,18 @@ $(function(){
             if(!this.artistList){
                 this.artistList = $(this.el).find('ul');
             }
-            _log(this.model.get('artists'));
             this.model.get('artists').each(this.renderArtist);
             return this;
         },
         renderArtist: function(artist){
             this.artistList.append(this.artistTemplate(artist.toJSON()));
-        },
-        
+        }
     });
     
-    
+    var FriendView = Backbone.ModelView.extend({
+        tagname: "div",
+        template: _.template($('#friend-template').html()),
+    });
     
     var ArtistBlogView = Backbone.ModelView.extend({
         tagname: "li",
@@ -266,10 +267,10 @@ $(function(){
         initialize: function(opts) {
           _log('BlogFinderView#initialize');
           this._user = opts._user;
-          _.bindAll(this, 'artistAdded', 'artistsRefreshed', 'render');
+          _.bindAll(this, 'artistAdded', 'artistsRefreshed', 'friendsRefreshed');
           this._user.get('artists').bind('add', this.artistAdded);
           this._user.get('artists').bind('refresh', this.artistsRefreshed);
-          this._user.get('artists').bind('all', this.render);
+          this._user.get('friends').bind('refresh', this.friendsRefreshed);
         },
 
         render: function() {},
@@ -284,7 +285,13 @@ $(function(){
             this.$("#artist-list").html('');
             _.each(this._user.get('artists'), this.artistAdded);
         },
-        
+        friendsRefreshed: function(){
+            $('#friend-list').html('');
+            this._user.get('friends').each(function(friend){
+                var view = new FriendView({model: friend});
+                $('#friend-list').append(view.render().el);
+            });
+        },
         lastfmUser: function(username, period){
             if($('#intro').is(':visible')){
                 $('#intro').hide();
@@ -292,15 +299,16 @@ $(function(){
             if(!$('#container').is(':visible')){
                 $('#container').show();
             }
+            $('#filter').find('a').removeClass('active');
+            $('#filter').find('a[rel='+period+']').addClass('active');
+            $('#filter').find('a').each(function(){
+                $(this).attr('href', '#lastfm/'+username+'/'+$(this).attr('rel'));
+            });
         },
         submitLastfmForm: function(e){
             var username = this.valor($(e.target).find('input[type=text]'), 'lucius910');
             this.redirect('lastfm/'+username);
             return false;
-        },
-        addBlog: function(blog){
-            var _b = $('#blognum');
-            _b.html(parseInt(_b.html())+1);
         },
         blogsSorted: function(blogs){
             _log('BlogFinderView#blogsSorted');
@@ -312,6 +320,8 @@ $(function(){
                 var view = new TopBlogView({model: top});
                 el.append(view.render().el);
             });
+            var _b = $('#blognum');
+            _b.html(blogs.length);
         }
     });
     
@@ -323,7 +333,6 @@ $(function(){
             _.bindAll(this, '_artistsChanged', '_blogsChanged', '_blogAdded');
             this._user = new User;
             this._blogs = new BlogList;
-            
             this._view = new BlogFinderView({_user: this._user});
             this._user.bind('change:artists', this._artistsChanged);
             
@@ -350,7 +359,6 @@ $(function(){
             var _b = this._blogs.contains('host', blog.get('host'));
             if(!_b){
                 this._blogs.add(blog);
-                this._view.addBlog(blog);
             }
             else{
                 blog.get('artists').each(function(artist){
@@ -366,6 +374,7 @@ $(function(){
             this._blogs = new BlogList;
             this._user.set({'username': username, 'artists': new ArtistList});
             this._fetchUserTopArtists(period);
+            this._fetchUserFriends();
             this._view.lastfmUser(username, period);
             this.saveLocation('lastfm/'+username+'/'+period);
         },
@@ -401,7 +410,8 @@ $(function(){
 			    }
             });
         },
-        _fetchUserFriends: function(user){
+        _fetchUserFriends: function(){
+            var user = this._user;
             $.ajax({
                 data: 'user='+user.get('username')+'&api_key='+LASTFM_API_KEY+'&format=json&limit=25',
                 url: 'http://ws.audioscrobbler.com/2.0/?method=user.getfriends',
@@ -409,9 +419,9 @@ $(function(){
                 processData:false,
                 global:false,
                 success:function(data){
-                    var friends = [];
+                    user.get('friends').refresh();
                     _.each(data.friends.user, function(f){
-                        user.get('friends').add(new Friend({'username': f.username}));
+                        user.get('friends').add(new Friend({'username': f.name, 'image': f.image[0]['#text']}));
                     });
                     user.get('friends').sort();
                 }

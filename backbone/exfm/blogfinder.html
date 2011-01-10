@@ -80,19 +80,17 @@
                 <div id="results"> 
                     <div id="filter"> 
                         <span id="filterinfo">
-                            Based off 
-                           <span id="filteruser">your</span>
-                           25 most played artists in the last
+                            Based off 25 most played artists in the last
                         </span> 
-                        <a id="7day">Week</a>
-                        <a id="3month">3 Months</a>
-                        <a id="12month">Year</a>
+                        <a rel="7day">Week</a>
+                        <a rel="3month">3 Months</a>
+                        <a rel="12month">Year</a>
                     </div>
                     <div id="top-blogs"></div>
                     <div id="artist-list">&nbsp;</div>
                 </div> 
                 <div id="friends"> 
-                    <h2>Your last.fm friends</h2> 
+                    <h2>Last.fm friends</h2> 
                     <div id="friend-list"></div>
                 </div>
                 
@@ -145,13 +143,27 @@
             <div class="top-blog">
                 <a href="http://<%= host %>" target="_blank">
                     <%= host %>
-                </a> has written about <%= artists.length %> band<% if( artists.length > 1){ %>s<% } %> you like
+                </a> has written about <%= artists.length %> band<% if( artists.length > 1){ %>s<% } %>
                 <ul class="blog-artists"></ul>
                 <br class="clear" />
             </div>
         </script>
         <script type="text/template" id="top-blog-artist-template">
-            <li><div class="img-wrapper"><img src="<%= image_small %>" /></div><%= name %></li>
+            <li>
+                <div class="img-wrapper">
+                    <img src="<%= image_small %>" />
+                </div>
+                <%= name %>
+            </li>
+        </script>
+        
+        <script type="text/template" id="friend-template">
+            <div class="friend">    
+                <div class="friendImage" style="background-image:url(<%= image %>);"> 
+                </div>    
+                <a href="#lastfm/<%= username %>/3month"><%= username %></a>
+                <br class="clear">
+            </div>
         </script>
     </body> 
 </html> 
