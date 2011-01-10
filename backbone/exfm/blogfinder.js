@@ -210,12 +210,14 @@ $(function(){
             if(!$('#container').is(':visible')){
                 $('#container').show();
             }
-            
+            var active = $('#filter').find('a[rel='+period+']');
             $('#filter a').removeClass('active');
-            $('#filter').find('a[rel='+period+']').addClass('active');
+            active.addClass('active');
             $('#filter a').each(function(){
                 $(this).attr('href', '#lastfm/'+username+'/'+$(this).attr('rel'));
             });
+            $('#timeframe').text(active.text());
+            document.title = 'Recommended blogs for '+username+' based on top played artists over the past '+active.text()
         },
         submitLastfmForm: function(e){
             var username = this.valor($('#username'), 'lucius910');
