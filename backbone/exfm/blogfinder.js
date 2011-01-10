@@ -363,6 +363,7 @@ $(function(){
             if(!period){
                 period = '3month';
             }
+            this._blogs = new BlogList;
             this._user.set({'username': username, 'artists': new ArtistList});
             this._fetchUserTopArtists(period);
             this._view.lastfmUser(username, period);
@@ -452,7 +453,6 @@ $(function(){
                                 _blog = new Blog({'name': blog.name, 'url': blog.url});
                                 _blogs.push(_blog);
                             }
-                            
                             _blog.artistAppeared(artist);
                         });
                         
