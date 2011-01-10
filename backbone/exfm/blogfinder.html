@@ -87,7 +87,6 @@
                         <a rel="12month">Year</a>
                     </div>
                     <div id="top-blogs"></div>
-                    <div id="artist-list">&nbsp;</div>
                 </div> 
                 <div id="friends"> 
                     <h2>Last.fm friends</h2> 
@@ -107,38 +106,6 @@
         
         <!-- Templates --> 
  
-        <script type="text/template" id="artist-template">
-            <div class="artist" id="artist-<%= cId %>">
-                <div class="left">
-                    <img src="<%= image %>" />
-                </div>
-                <div class="right">
-                    <h3 class="name"><%= name %></h2>
-                    <div class="blogs" class="loading">
-                        <div class="loading-message">
-                            Finding zee blogs...
-                        </div>
-                        <div class="blog-list">
-                            <em>Recently featured on these blogs:</em>
-                            <ul></ul>
-                            <div class="more" style="display: none;">
-                                <a href="javascript:void(0);">Show more</a>
-                            </div>
-                            <div class="less" style="display: none;">
-                                <a href="javascript:void(0);">Show less</a>
-                            </div>
-                        </div>
-	                </div>
-                </div>
-                <br class="clear">
-            </div>
-        </script>
-        <script type="text/template" id="artist-blog-template">
-            <li<% if(index > 2) { %> style="display: none;" class="bonus"<% } %>>
-            <a class="title" target="_blank" href="http://<%= host %>"><%= host %></a>
-            <a class="post" target="_blank" href="<%= url %>"><%= name %></a>
-            </li>
-        </script>
         <script type="text/template" id="top-blog-template">
             <div class="top-blog">
                 <a href="http://<%= host %>" target="_blank">
@@ -161,7 +128,7 @@
             <div class="friend">    
                 <div class="friendImage" style="background-image:url(<%= image %>);"> 
                 </div>    
-                <a href="#lastfm/<%= username %>/3month"><%= username %></a>
+                <a href="#lastfm/<%= username %>/3month"><% if(realname){ %><%= realname %><%}else{%><%= username %><%}%></a>
                 <br class="clear">
             </div>
         </script>

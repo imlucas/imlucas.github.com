@@ -90,22 +90,17 @@ $(function(){
         'username': 'A last.fm user',
         'image': '',
     });
-    
-    var BlogPost = Backbone.Model.extend({
-        defaults: {'title': 'Post Title', 'url': '', 'host': ''},
-    });
-    
+
     var Blog = Backbone.Model.extend({
         defaults: {
             'name': 'A blog',
             'url': 'http://www.ablog.com',
             'host': 'ablog.com',
             'count': 1,
-            'postCount': 1,
             'artists': []
         },
         initialize: function(){
-            this.set({'artists': new ArtistList, 'cId': this.cid, 
+            this.set({'artists': new ArtistList,
                 'host': _blog_host(this.get('url'))});
         },
         artistAppeared: function(artist){
@@ -117,7 +112,6 @@ $(function(){
         }
     });
     
-    
     var Artist = Backbone.Model.extend({
         defaults: {
             'name': 'An Artist',
@@ -127,10 +121,7 @@ $(function(){
             'blogs': [],
         },
         initialize: function() {
-            this.set({'blogs': new BlogList, 'cId': this.cid});            
-        },
-        toString: function(){
-            return "Artist({name:'"+this.get('name')+"'})";
+            this.set({'blogs': new BlogList});            
         }
     });
     
@@ -161,15 +152,11 @@ $(function(){
         model: Blog,
         comparator: function(blog){
             return -blog.get('artists').length;
-            //return blog.get('host');
         }
     });
     
     var ArtistList = Backbone.Collection.extend({
-        model: Artist,
-        comparator: function(artist) {
-          return -artist.get('playcount');
-        }
+        model: Artist
     });
     
 /////////////////////////////////////////////////
@@ -203,61 +190,6 @@ $(function(){
         template: _.template($('#friend-template').html()),
     });
     
-    var ArtistBlogView = Backbone.ModelView.extend({
-        tagname: "li",
-        template: _.template($('#artist-blog-template').html())
-    });
-    
-    var ArtistView = Backbone.View.extend({
-        tagName:  "div",
-        template: _.template($('#artist-template').html()),
-        initialize: function(){
-          _.bindAll(this, 'renderBlogs', 'render');
-          this.model.bind('change', this.render);
-          this.model.get('blogs').bind('refresh', this.renderBlogs);
-          this.model.view = this;
-        },
-        events: {
-            "click .blogs .blog-list .more a": "_showMoreBlogs",
-            "click .blogs .blog-list .less a": "_showLessBlogs"
-        },
-        render: function() {
-          $(this.el).html(this.template(this.model.toJSON()));
-          return this;
-        },
-        renderBlogs: function(){
-            _log('ArtistView#renderBlogs');
-            var _b = $(this.el).find('.blogs');
-            var _blog_list = _b.find('ul');
-            _blog_list.html('');
-            this.model.get('blogs').each(function(blog, index){
-                blog.set({'index': index});
-                var view = new ArtistBlogView({model: blog});
-                _blog_list.append(view.render().el); // @todo (lucas) Slow.
-            });
-            if(this.model.get('blogs').length > 3){
-                _b.find('div.more').show();
-            }
-            _b.removeClass('loading').addClass('loaded');
-            if(this.model.get('blogs').length < 1){
-                $(this.el).find('.blog-list em').html('No blogs :(');
-            }
-            return this;
-        },
-        _showMoreBlogs: function(e){
-            var el = $(this.el);
-            el.find('li').show();
-            el.find('.more').hide();
-            el.find('.less').show();
-        },
-        _showLessBlogs: function(e){
-            var el = $(this.el);
-            el.find('li.bonus').hide();
-            el.find('.more').show();
-            el.find('.less').hide();
-        }
-    });
-    
     var BlogFinderView = Backbone.View.extend({
         el: $("#blogfinderapp"),
         _controller_listener: null,
@@ -267,30 +199,9 @@ $(function(){
         initialize: function(opts) {
           _log('BlogFinderView#initialize');
           this._user = opts._user;
-          _.bindAll(this, 'artistAdded', 'artistsRefreshed', 'friendsRefreshed');
-          this._user.get('artists').bind('add', this.artistAdded);
-          this._user.get('artists').bind('refresh', this.artistsRefreshed);
+          
+          _.bindAll(this, 'friendsRefreshed');
           this._user.get('friends').bind('refresh', this.friendsRefreshed);
-        },
-
-        render: function() {},
-        artistAdded: function(artist) {
-            _log('BlogFinderView#artistAdded: '+artist);
-            var view = new ArtistView({model: artist});
-            this.$("#artist-list").append(view.render().el);
-        },
-
-        artistsRefreshed: function() {
-            _log('BlogFinderView#artistsRefreshed called');
-            this.$("#artist-list").html('');
-            _.each(this._user.get('artists'), this.artistAdded);
-        },
-        friendsRefreshed: function(){
-            $('#friend-list').html('');
-            this._user.get('friends').each(function(friend){
-                var view = new FriendView({model: friend});
-                $('#friend-list').append(view.render().el);
-            });
         },
         lastfmUser: function(username, period){
             if($('#intro').is(':visible')){
@@ -299,14 +210,15 @@ $(function(){
             if(!$('#container').is(':visible')){
                 $('#container').show();
             }
-            $('#filter').find('a').removeClass('active');
+            
+            $('#filter a').removeClass('active');
             $('#filter').find('a[rel='+period+']').addClass('active');
-            $('#filter').find('a').each(function(){
+            $('#filter a').each(function(){
                 $(this).attr('href', '#lastfm/'+username+'/'+$(this).attr('rel'));
             });
         },
         submitLastfmForm: function(e){
-            var username = this.valor($(e.target).find('input[type=text]'), 'lucius910');
+            var username = this.valor($('#username'), 'lucius910');
             this.redirect('lastfm/'+username);
             return false;
         },
@@ -322,7 +234,14 @@ $(function(){
             });
             var _b = $('#blognum');
             _b.html(blogs.length);
-        }
+        },
+        friendsRefreshed: function(){
+            $('#friend-list').html('');
+            this._user.get('friends').each(function(friend){
+                var view = new FriendView({model: friend});
+                $('#friend-list').append(view.render().el);
+            });
+        },
     });
     
 /////////////////////////////////////////////////
@@ -335,11 +254,22 @@ $(function(){
             this._blogs = new BlogList;
             this._view = new BlogFinderView({_user: this._user});
             this._user.bind('change:artists', this._artistsChanged);
-            
         },
         routes: {
             'lastfm/:username': 'lastfmUser',
             'lastfm/:username/:period': 'lastfmUser',
+        },
+        lastfmUser: function(username, period){
+            _log('BlogFinder#lastfmUser called');
+            period = period || '3month';
+            
+            this._blogs = new BlogList;
+            this._user.set({'username': username, 'artists': new ArtistList});
+            this._fetchUserTopArtists(period);
+            this._fetchUserFriends();
+            
+            this._view.lastfmUser(username, period);
+            this.saveLocation('lastfm/'+username+'/'+period);
         },
         _artistsChanged: function(){
             _log('User artists changed!');
@@ -348,7 +278,6 @@ $(function(){
                 artist.get('blogs').bind('refresh', _app._blogsChanged);
                 _app._fetchBlogsForArtist(artist);
             });
-            //this._view.artistsRefreshed();
         },
         _blogsChanged: function(blogs){
             blogs.each(this._blogAdded);
@@ -366,78 +295,70 @@ $(function(){
                 });
             }
         },
-        lastfmUser: function(username, period){
-            _log('BlogFinder#lastfmUser called');
-            if(!period){
-                period = '3month';
-            }
-            this._blogs = new BlogList;
-            this._user.set({'username': username, 'artists': new ArtistList});
-            this._fetchUserTopArtists(period);
-            this._fetchUserFriends();
-            this._view.lastfmUser(username, period);
-            this.saveLocation('lastfm/'+username+'/'+period);
-        },
         _fetchUserTopArtists: function(period){
             _log('BlogFinder#_fetchUserTopArtists: '+period);
-            if(!period){
-                period = '3month';
-            }
+            period = period || '3month';
             var _user = this._user;
-            _log('BlogFinder#_fetchUserTopArtists: Getting top artists for '+_user.get('username'));
             $.ajax({
-                data: 'user='+_user.get('username')+'&api_key='+LASTFM_API_KEY+'&format=json&limit=25&period='+period,
-                url: 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists',
+                url: 'http://ws.audioscrobbler.com/2.0/',
+                data: {
+                    'user': _user.get('username'), 
+                    'api_key': LASTFM_API_KEY, 
+                    'format': 'json', 
+                    'limit': 25, 
+                    'method': 'user.gettopartists',
+                    'period': period
+                },
                 dataType:'jsonp',
-                processData:false,
-                global:false,
                 success:function(data){
-                    _log('BlogFinder#_fetchUserTopArtists: Got data back from lastfm');
-                    var artists = [];
-				    _.each(data.topartists.artist, function(a){
-				        var artist = new Artist({'name': a.name, 
-				            'playcount': a.playcount, 
-				            'image': a.image[3]['#text'],
-				            'image_small': a.image[1]['#text']});
-				            
-				        artists.push(artist);
+				    _user.set({'artists': 
+				        _.map(data.topartists.artist, function(a){
+				            return new Artist({'name': a.name, 
+    				            'playcount': a.playcount, 
+    				            'image': a.image[3]['#text'],
+    				            'image_small': a.image[1]['#text']});
+    				    })
 				    });
-				    _log('BlogFinder#_fetchUserTopArtists: Setting artists to '+artists);
-				    _user.set({'artists': artists});
                	},
 			    error:function(e){
-            		alert('Error');
+            		_error(e);
 			    }
             });
         },
         _fetchUserFriends: function(){
             var user = this._user;
             $.ajax({
-                data: 'user='+user.get('username')+'&api_key='+LASTFM_API_KEY+'&format=json&limit=25',
-                url: 'http://ws.audioscrobbler.com/2.0/?method=user.getfriends',
+                url: 'http://ws.audioscrobbler.com/2.0/',
+                data: {
+                    'user': user.get('username'), 
+                    'api_key': LASTFM_API_KEY, 
+                    'format': 'json', 
+                    'limit': 25, 
+                    'method': 'user.getfriends'
+                },
                 dataType:'jsonp',
-                processData:false,
-                global:false,
                 success:function(data){
-                    user.get('friends').refresh();
-                    _.each(data.friends.user, function(f){
-                        user.get('friends').add(new Friend({'username': f.name, 'image': f.image[0]['#text']}));
-                    });
-                    user.get('friends').sort();
+                    user.get('friends').refresh(_.map(data.friends.user, function(f){
+                        return new Friend({'username': f.name, 
+                            'image': f.image[0]['#text'], 
+                            'realname': f.realname})
+                    })).sort();
                 }
             });
         },
         _fetchBlogsForArtist: function(artist){
             var artist = artist;
             $.ajax({
-                'url': 'http://developer.echonest.com/api/v4/artist/blogs',
-                'data': {'format':'jsonp', 
+                url: 'http://developer.echonest.com/api/v4/artist/blogs',
+                data: {
+                    'format':'jsonp', 
                     'name': artist.get('name'), 
                     'results':'15',
                     'start': 0,
                     'api_key': 'N6E4NIOVYMTHNDM8J',
                 },
-                'success':function(data){
+                dataType : 'jsonp',
+                success:function(data){
                     if(data.response.status.code != 0){
                         _error('BlogFinder#_fetchBlogsForArtist: Error fetching blogs '+data.response.status.message);
                         artist.set({'blogs': new BlogList});
@@ -468,9 +389,7 @@ $(function(){
                         
                     }
                     artist.get('blogs').refresh(_blogs);
-                },
-                'dataType' : 'jsonp',
-                'artistName':artist.get('name')
+                }
             });
         },
     });
