@@ -238,7 +238,7 @@ $(function(){
                 $(this).attr('href', '#lastfm/'+username+'/'+$(this).attr('rel'));
             });
             $('#timeframe').text(active.text());
-            document.title = 'Recommended blogs for '+username+' based on top played artists over the past '+active.text()
+            document.title = 'Recommended blogs for '+username+' based on top played artists over the past '+active.text();
         },
         submitLastfmForm: function(e){
             var username = this.valor($('#username'), 'lucius910');
@@ -294,6 +294,8 @@ $(function(){
             
             this._view.lastfmUser(username, period);
             this._history.add(new HistoryItem({'username': username, 'period': period}));
+            _gaq.push(['_trackEvent', 'View Blogs', username, period]);
+            _gaq.push(['_trackPageview', '/lastfm/'+username+'/'+period]);
             this.saveLocation('lastfm/'+username+'/'+period);
         },
         _artistsChanged: function(){
