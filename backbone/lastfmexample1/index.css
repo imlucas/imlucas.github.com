@@ -1,0 +1,40 @@
+body{
+	background: #EEEEEE;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #333333;
+}
+#app{
+	background: #FFFFFF;
+	margin: 20px auto 20px auto;
+	padding: 10px;
+	max-width: 480px;
+	-webkit-box-shadow: #000 0 1px 5px;
+}
+input[type=text]{
+	font-size: 18px;
+	min-width: 246px;
+}
+input[type=submit]{
+	font-size:18px;
+	background: #FF5E99;
+	color: #FFFFFF;
+	border: 0px;
+	cursor: pointer;
+}
+
+.artist{
+	border-top: 1px solid #CCC;
+	margin-top: 5px;
+	padding-top: 5px;
+	clear: both;
+}
+.artist .left{
+	float: left;
+	margin-right: 10px;
+	min-width: 252px;
+}
+.artist h2{
+	font-size: 120%;
+}
