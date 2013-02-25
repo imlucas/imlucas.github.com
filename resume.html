@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<head>
+    <title>Lucas Hrabovsky's Resume</title>
+    <link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+
+    <style>
+    body{
+        background: #f5f5f5;
+    }
+    #container {
+        box-shadow: 0px 0px 1px 0px #999;
+        margin: 50px auto 50px auto;
+        padding: 0px 20px;
+        background: #FFFFFF;
+    }
+    #summary p {
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.25;
+    }
+    #recommendations h2, #experience h2, #education h2 {
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        padding-bottom: 20px;
+        margin-top: 20px;
+
+    }
+    header {
+        margin-bottom: 20px;
+    }
+
+    header ul{
+        list-style-type: none;
+    }
+
+    header aside{
+        padding-top: 20px;
+    }
+
+    header h1 {
+        font-size: 54px;
+        line-height: 60px;
+    }
+
+    header h2 {
+        line-height: 60px;
+    }
+
+    h5 {
+        color: #999;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        font-size: 12px;
+    }
+
+    #experience p, #education p {
+        margin-bottom: 0;
+        font-size: 17.5px;
+        font-weight: 300;
+        line-height: 1.25;
+        margin-bottom: 10px;
+    }
+
+
+    #experience article, #education article, #recommendations article {
+        margin-bottom: 40px;
+    }
+
+    #experience article:before, #experience article:after,
+    #education article:before, #education article:after,
+    #recommendations article:before, #recommendations article:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    #experience aside ul, #education aside ul{
+        list-style-type: none;
+        font-size: 12px;
+        margin: 0;
+    }
+
+
+    #experience aside.meta ul li:nth-child(1), #education aside.meta ul li:nth-child(1) {
+        font-style: italic;
+    }
+
+    #experience aside.meta ul li:nth-child(2), #education aside.meta ul li:nth-child(2) {
+        font-weight: bold;
+    }
+
+    footer {
+        margin-bottom: 10px;
+        color: #666;
+    }
+
+    footer a{
+        color: #666;
+    }
+
+    footer ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    footer li {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    footer ul.vcard li:nth-child(2):before, footer ul.vcard li:nth-child(2):after {
+        content: "⚛"
+    }
+
+    .github{
+            display: block;
+            top: 0;
+            right: 10px;
+            z-index: 10;
+            padding: 10px 50px 10px 10px;
+            color: #fff;
+            background: url('http://exfm.github.com/node-mambo/images/blacktocat.png') #1077c7 no-repeat 95% 50%;
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            width: 100px;
+    }
+
+    .languages {
+        clear: both;
+    }
+
+    .box1 {
+        -webkit-transform: rotate(-60deg);
+        background-color: #1077c7;
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        margin-top: -40px;
+        margin-left: 20px;
+    }
+
+    .box2 {
+        -webkit-transform: rotate(-60deg);
+        background-color: #333333;
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 40px;
+    }
+
+    .box3 {
+        -webkit-transform: rotate(-60deg);
+        background-color: #FFE545;
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 60px;
+    }
+
+    .box4 {
+        -webkit-transform: rotate(-60deg);
+        background-color: #FBB829;
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        margin-top: 65px;
+        margin-left: 85px;
+    }
+    .box-wrap {
+        position: absolute;
+        overflow: hidden;
+        height: 150px;
+        width: 150px;
+        margin-left: 830px;
+        background: #FF4D00;
+        box-shadow: 1px 1px 1px rgba(0,2px,10px,0.2);
+    }
+    </style>
+</head>
+<body>
+
+    <div id="container" class="container narrow">
+        <header class="row">
+                <article class="span7">
+                    <h1 class="n"><span class="given-name">Lucas</span> <span class="family-name">Hrabovsky</span></h1>
+                    <h2><a class="email" href="mailto:hrabovsky.lucas@gmail.com">hrabovsky.lucas@gmail.com</a></h2>
+                </article>
+                <aside class="span3">
+                    <ul>
+                        <li class="tel">412.478.6286</li>
+                    </ul>
+                    <ul class="adr">
+                        <li class="street-address">597 Vanderbilt Ave, #3</li>
+                        <li>
+                            <span class="locality">Brooklyn</span>
+                            <span class="region" title="New York">NY</span>,
+                            <span class="postal-code">11238</span>
+                        </li>
+                    </ul>
+
+
+                    <ul>
+                        <li><a class="url" href="http://github.com/imlucas">github.com/imlucas</a></li>
+                        <li><a class="url" href="http://imlucas.com">imlucas.com</a></li>
+                    </ul>
+                </aside>
+
+                <div class="box-wrap">
+                    <div class="box1">&nbsp;</div>
+                    <div class="box2">&nbsp;</div>
+                    <div class="box3">&nbsp;</div>
+                    <div class="box4">&nbsp;</div>
+                </div>
+
+        </header>
+        <section id="summary">
+            <article class="row">
+                <p class="span12">
+                    Strong leader dedicated to inspiring and motivating a team.
+                    Extensive experience developing e-commerce applications.
+                    Takes a holistic start to finish approach to product development,
+                    from low level caching code to branding and market strategy.
+                    Music nerd, web geek.  Ten years of start-up experience.
+                </p>
+            </article>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <article class="row">
+                <h3 class="span12">ex.fm &mdash; CTO</h3>
+                <p class="span9">
+                    ex.fm started it's life as an entirely client-side chrome extension
+                    to help users manage music playback as they browsed the web.
+                    Developed the backend for the web application, mobile website, add-ons for all of
+                    the major web browsers, and applications for iOS and android.
+                    Responsible for everything from building the inital storage backend
+                    for the chrome extension to building devops and deployment tools.
+                    Developed native application for android.
+                    Created framework and tools for second generation hybrid Phonegap
+                    mobile applications.  Used Amazon Web Service heavily to scale
+                    for 10x growth over 12 months.  Extensive performance tuning
+                    and maintenance of MongoDB, Redis, RabbitMQ, uWSGI and Flask.
+                    Transitioned from monolithic Python application to Node.js
+                    service oriented architecture.
+                </p>
+                <aside class="span3 meta">
+                    <ul>
+                        <li>May 2011 – Present</li>
+                        <li>New York, NY</li>
+                        <li>Privately Held</li>
+                        <li>Online Media industry</li>
+                        <li>7 Employees</li>
+                    </ul>
+                </aside>
+                <aside class="span3 languages">
+                    <h5>Languages</h5>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>CSS</li>
+                    </ul>
+                </aside>
+                <aside class="span3 frameworks">
+                    <h5>Frameworks</h5>
+                    <ul>
+                        <li>Flask</li>
+                        <li>Node.js</li>
+                        <li>Fabric</li>
+                        <li>Backbone</li>
+                        <li>Phonegap</li>
+                        <li>Android</li>
+                    </ul>
+                </aside>
+                <aside class="span3 datastores">
+                    <h5>Data Stores</h5>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>Redis</li>
+                        <li>RabbitMQ</li>
+                        <li>SOLR</li>
+                        <li>LevelDB</li>
+                        <li>Memcached</li>
+                    </ul>
+                </aside>
+                <aside class="span3 aws">
+                    <h5>AWS Services</h5>
+                    <ul>
+                        <li>EC2</li>
+                        <li>S3</li>
+                        <li>DynamoDB</li>
+                        <li>CloudSearch</li>
+                        <li>Route53</li>
+                    </ul>
+                </aside>
+            </article>
+
+            <article class="row">
+                <h3 class="span12">LimeWire LLC &mdash; Architect</h3>
+                <p class="span9">
+                    Led a team of six to build a high performance Python/SOLR backend
+                    to serve as the base for a new music service.  Worked with
+                    front-end team to evaluate and implement several Javascript
+                    frameworks to best suit a desktop run-time.  Volunteered to own
+                    deployment and build process.  Created a Python framework to
+                    manage and scale out deployment of the server side stack
+                    utilizing Amazon Elastic Load Balancing, RDS, EC2,
+                    Elastic IP and SimpleDB.
+                </p>
+
+                <aside class="span3 meta">
+                    <ul>
+                        <li>March 2010 – January 2011</li>
+                        <li>New York, NY</li>
+                        <li>Privately Held</li>
+                        <li>Online Media industry</li>
+                        <li>100+ Employees</li>
+                    </ul>
+                </aside>
+                <aside class="span3 languages">
+                    <h5>Languages</h5>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                        <li>Scala</li>
+                    </ul>
+                </aside>
+                <aside class="span3 frameworks">
+                    <h5>Frameworks</h5>
+                    <ul>
+                        <li>Pylons</li>
+                        <li>Thrift</li>
+                        <li>Qt</li>
+                        <li>Fabric</li>
+                        <li>SQLAlchemy</li>
+                    </ul>
+                </aside>
+                <aside class="span3 datastores">
+                    <h5>Data Stores</h5>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SOLR</li>
+                        <li>Memcached</li>
+                    </ul>
+                </aside>
+                <aside class="span3 aws">
+                    <h5>AWS Services</h5>
+                    <ul>
+                        <li>EC2</li>
+                        <li>S3</li>
+                        <li>SimpleDB</li>
+                        <li>RDS</li>
+                    </ul>
+                </aside>
+            </article>
+            <article class="row">
+                <h3 class="span12">Amie Street &mdash; CTO, Co-Founder</h3>
+                <p class="span9">
+                    An online music store where all songs are priced by the
+                     community, starting out free and rising to 98 cents the more
+                     popular they become. Developed the initial proof of concept
+                     and led development through three major versions. Primarily
+                     focused on project management, product strategy, concepting,
+                     prototyping, designing, and coding new features based on user
+                     feedback.  Optimizing existing flows with multivariate testing.
+                     Researching new techniques and technologies to enhance and
+                     extend the user experience.  Creating and presenting project
+                     requirements documents.  Funded by Amazon.com.  Acquired by
+                     Amazon.com in October 2010.
+                </p>
+                <aside class="span3 meta">
+                    <ul>
+                        <li>February 2006 – November 2009</li>
+                        <li>New York, NY</li>
+                        <li>Privately Held</li>
+                        <li>Online Media industry</li>
+                        <li>22 Employees</li>
+                    </ul>
+                </aside>
+                <aside class="span3 languages">
+                    <h5>Languages</h5>
+                    <ul>
+                        <li>PHP</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>Erlang</li>
+                        <li>ActionScript 3</li>
+                    </ul>
+                </aside>
+                <aside class="span3 frameworks">
+                    <h5>Frameworks</h5>
+                    <ul>
+                        <li>Thrift</li>
+                        <li>Zend</li>
+                        <li>jQuery</li>
+                        <li>Flex</li>
+                        <li>Hadoop</li>
+                    </ul>
+                </aside>
+                <aside class="span3 datastores">
+                    <h5>Data Stores</h5>
+                    <ul>
+                        <li>Memcached</li>
+                        <li>MySQL</li>
+                    </ul>
+                </aside>
+                <aside class="span3 aws">
+                    <h5>AWS Services</h5>
+                    <ul>
+                        <li>S3</li>
+                    </ul>
+                </aside>
+            </article>
+            <article class="row" style="display: none;">
+                <h3 class="span12">Business Innovation Factory / Rhode Island EDC &mdash; Intern</h3>
+                <p class="span9">
+                    The Business Innovation Factory (BIF) focuses on solving major
+                    problems in areas like healthcare, education, telecommunications
+                    and energy.  Created documentation and case presentation of
+                    the current Rhode Island Wireless Innovation Network (RI-WINS).
+                    RI-WINS mission: provide broadband wireless internet access
+                    covering the entire state.  Vocalization of the RI-WINS project strategy.
+                </p>
+
+                <aside class="span3 meta">
+                    <ul>
+                        <li>October 2005 – December 2005</li>
+                        <li>Providence, RI</li>
+                        <li>Government organization</li>
+                        <li>Information Technology industry</li>
+                        <li>100+ employees</li>
+                    </ul>
+                </aside>
+                <aside>
+                    <ul class="span12">
+                        <li class="label label-inverse">Strategy</li>
+                    </ul>
+                </aside>
+            </article>
+            <article class="row">
+                <h3 class="span12">Advance Mentoring Inc &mdash; Co-Founder</h3>
+                <p class="span9">
+                    A social networking application designed to connect mentees
+                    interested in professional development with mentors.
+                    Handled all product development and managed day-to-day
+                    technical operations. Developed core user matching algorithms.
+                </p>
+                <aside class="span3 meta">
+                    <ul>
+                        <li>April 2003 – September 2005</li>
+                        <li>Providence, RI</li>
+                        <li>Privately Held</li>
+                        <li>Internet industry</li>
+                        <li>6 employees</li>
+                    </ul>
+                </aside>
+                <aside class="span3 languages">
+                    <h5>Languages</h5>
+                    <ul>
+                        <li>PHP</li>
+                        <li>JavaScript</li>
+                        <li>ActionScript 3</li>
+                    </ul>
+                </aside>
+                <aside class="span3 frameworks">
+                    <h5>Frameworks</h5>
+                    <ul>
+                        <li>Prototype.js</li>
+                    </ul>
+                </aside>
+            </article>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <article class="row">
+                <h3 class="span12">Brown University – BA, Business Economics</h3>
+
+                <p class="span9">
+                    Primary research focus on Strategy and Governance.
+                    Research Assistant for Professor Dennis Michaud, PhD.
+                    Member of the Brown University Entrepreneurship Program
+                    and Corporate Governance Initiative.  Primary Senior
+                    Research for the Governance Initiative: &quot;Economic Value
+                    Added and the S&amp;P 500&quot;.
+                </p>
+                <aside class="span3 meta">
+                    <ul class="notes">
+                        <li>September 2002 – May 2006</li>
+                        <li>Providence, RI</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </aside>
+            </article>
+        </section>
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <article>
+                <blockquote class="pull-right">
+                    <p>
+                        Lucas demonstrates excellent judgement, integrity, and knowledge of his industry. He is an idea generator and builder with an honest and forward-looking perspective on digital products.
+                    </p>
+                    <small>Jonah Model, colleague</small>
+                </blockquote>
+            </article>
+
+            <article>
+                <blockquote class="pull-right">
+                    <p>
+                        Lucas is a manager who is incredibly dedicated to his team and projects. When I worked with him at Amie Street, It was always clear that he cared deeply both for the products we were building and for the well being of the engineers. He is never shy of getting dirty in the code and would routinely hack late into the night on some new product prototype or integration with a new API. These prototypes often led to compelling new features on the website, including integration with last.fm and Facebook.
+                    </p>
+                <small>Todd Lipcon, colleague</small>
+                </blockquote>
+            </article>
+
+            <article>
+                <blockquote class="pull-right">
+                    <p>
+                        Lucas is an exceptional manager. As CTO he set a clear direction for our team. He also trusted each individual and was fair with his delegation of tasks. Having worked with him directly on many different projects I can say that his focus is like a laser beam and he is rarely off target. Lucas made my experience at Amie Street one to remember.
+                    </p>
+                    <small>Nels Setterlund, colleague</small>
+                </blockquote>
+            </article>
+        </section>
+
+        <section id="projects" style="display: none;">
+            <h2>Projects</h2>
+
+            <article class="row">
+                    <h3 class="span2">mambo</h3>
+                    <h4 class="span4"><a href="http://exfm.github.com/node-mambo" class="github" style="width: 270px;">exfm.github.com/node-mambo</a></h4>
+                    <blockquote>
+                    <p>
+                        Mambo does some things for DynamoDB.
+                    </p>
+                    </blockquote>
+            </article>
+
+            <article class="row">
+                    <h3 class="span2">magneto</h3>
+                    <h4 class="span4"><a href="http://exfm.github.com/node-magneto" class="github" style="width: 280px;">exfm.github.com/node-magneto</a></h4>
+            </article>
+            <article class="row">
+                    <h3 class="span2">mambo</h3>
+                    <h4 class="span4"><a href="http://exfm.github.com/mott" class="github" style="width: 190px;">exfm.github.com/mott</a></h4>
+            </article>
+
+        </section>
+    </div>
+
+    <footer class="container">
+        <ul class="vcard">
+            <li><span class="given-name">Lucas</span> <span class="family-name">Hrabovsky</span></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a class="email" href="mailto:hrabovsky.lucas@gmail.com">hrabovsky.lucas@gmail.com</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li class="tel">412.478.6286</li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+
