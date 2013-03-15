@@ -176,7 +176,7 @@ p.answer_form_container {margin-top:9px;}
 
 /* Audio */
 .audio {position:relative;}
-.player {margin-bottom:9px; width:207px; min-height:27px; background:#000; color:#fff; text-align:center;}
+.player {margin-bottom:9px; width:40px; min-height:40pxpx; background:#FFF; color:#FFF;}
 .player span {line-height:2.7;}
 .player span a {font-weight:bold; color:#fff;}
 .player span a:hover {border-bottom:1px solid #464646;}
