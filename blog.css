@@ -12,9 +12,14 @@ input, textarea, select {color:#464646; font-family:"Lucida Sans Unicode", "Luci
 code {font-family:Monaco, "Lucida Console", "Courier New", monospace;}
 
 a {color:#1077C6; text-decoration:none;}
+
+
 a:hover,
 .metaAudio a:hover span,
 #pageNav a:hover span {color:#000;}
+
+
+
 .content a,
 .notes li a,
 #credit a {font-weight:bold;}
@@ -23,6 +28,9 @@ a:hover,
 .metaAudio a span,
 #footerNav li a span,
 #pageNav a span {border-bottom:1px dotted #dcdcdc;}
+
+
+
 .content a:hover,
 .notes li a:hover,
 .metaList li.author a:hover,
@@ -31,6 +39,8 @@ a:hover,
 .metaAudio a:hover span,
 #footerNav li a:hover span,
 #pageNav a:hover span {border-bottom:1px solid #dcdcdc; color:#555;}
+
+
 .metaNav li a:hover,
 .metaAudio a:hover {border:0;}
 
@@ -178,7 +188,13 @@ p.answer_form_container {margin-top:9px;}
 .embed embed {width:500px; -webkit-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); -moz-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05);}
 
 /* Meta */
-.meta {margin:14px 0 0 0; font-size:100%;}
+.meta {
+    float: right;
+    margin: 0;
+    font-size:100%;
+}
+
+
 .metaList {display:block;}
 .metaList li {display:block; float:left; list-style:none; margin:0 10px 6px 0;}
 .metaList li a,
