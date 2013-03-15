@@ -176,11 +176,23 @@ p.answer_form_container {margin-top:9px;}
 
 /* Audio */
 .audio {position:relative;}
-.player {background:#FFF; color:#FFF;}
+.player {
+    background: #FFF;
+    color: #FFF;
+    margin-top: 12px;
+}
 .player span {line-height:2.7;}
 .player span a {font-weight:bold; color:#fff;}
 .player span a:hover {border-bottom:1px solid #464646;}
-.metaAudio {font-size:100%; line-height:1.8;}
+
+.metaAudio {
+    font-size:180%;
+    line-height:1.3333;
+    float: left;
+    color:#464646;
+    font-family:Georgia, "Times New Roman", serif;
+    margin-right: 10px;
+}
 
 /* Video */
 .embed {margin-bottom:10px;}
