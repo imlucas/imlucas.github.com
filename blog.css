@@ -11,25 +11,59 @@ body {
     color:#707070;
 }
 
+pre, code {
+  width: 100%;
+  color: #222;
+  background-color: #fff;
+
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 14px;
+
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+pre {
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+  overflow: auto;
+  background: #f1f4f5;
+}
+
+code {
+  padding: 3px;
+  margin: 0 3px;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+  background: #f1f4f5;
+}
+a code {
+  border: 1px solid #1077c7;
+  color: #1077c7;
+}
+pre code {
+  display: block;
+  box-shadow: none;
+}
+
 #wrapper {
     position:relative;
     margin:0 auto;
     width:98%;
 }
 
-#top {
-    margin:0 auto;
-    height:3px;
-    width:680px;
-    background:url(http://static.tumblr.com/iqfzjqj/KHnkkt8kp/shadowtop.png) -5px top repeat-x;
+#page {
+    position:relative;
+    padding:0 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
-#topLeft {position:absolute; top:0; left:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/KHnkkt8kp/shadowtop.png) left top no-repeat;}
-#topRight {position:absolute; top:0; right:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/KHnkkt8kp/shadowtop.png) right top no-repeat;}
-#bottom {margin:0 auto; height:8px; width:680px; background:url(http://static.tumblr.com/iqfzjqj/etdkkt8j8/shadowbottom.png) -5px -2px repeat-x;}
-#bottomLeft {position:absolute; bottom:2px; left:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/etdkkt8j8/shadowbottom.png) left top repeat-x;}
-#bottomRight {position:absolute; bottom:2px; right:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/etdkkt8j8/shadowbottom.png) right top repeat-x;}
-#page {position:relative; padding:0 5px; background:url(http://static.tumblr.com/iqfzjqj/KW0kkt8lb/shadowrepeat.png) left 8px repeat-y;}
-#pageInner {position:relative; padding:36px 40px 0 40px; background:#f5f5f5 url(http://static.tumblr.com/iqfzjqj/G0ykkt8g4/pageoverlay.png) left top repeat;}
+
+#pageInner {
+    position:relative;
+    padding:36px 40px 0 40px;
+    background: #FFFFFF;
+}
 
 strong, b {font-weight:bold;}
 em, i {font-style:italic;}
@@ -135,7 +169,8 @@ li.comments a:hover {background-position:0 -432px;}
     margin-bottom:9px;
     padding-right:100px;
     font-size:120%;
-    line-height:1.8;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 .content p, .content ul, .content ol {margin-bottom:6px;}
