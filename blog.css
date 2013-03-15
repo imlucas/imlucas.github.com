@@ -287,9 +287,10 @@ html {
     background:transparent;
 }
 body {
-    padding:20px 0;
     font: 80%/1 Helvetica, sans-serif;
     color:#707070;
+    margin: 0;
+    padding: 28px 0;
 }
 
 pre, code {
