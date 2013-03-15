@@ -369,11 +369,13 @@ h2 a {
 .box-wrap{
     position: absolute;
     overflow: hidden;
-    height: 150px;
+    height: 91px;
     width: 150px;
-    margin-left: 830px;
+    right: 0;
     background: #FF4D00;
     box-shadow: 1px 1px 1px rgba(0,2px,10px,0.2);
+    top: -1px;
+    z-index: 100;
 }
 .box1 {
     background-color: #1077c7;
