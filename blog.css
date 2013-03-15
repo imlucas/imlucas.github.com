@@ -176,11 +176,11 @@ p.answer_form_container {margin-top:9px;}
 
 /* Audio */
 .audio {position:relative;}
-.player {margin-bottom:9px; width:40px; min-height:40pxpx; background:#FFF; color:#FFF;}
+.player {background:#FFF; color:#FFF;}
 .player span {line-height:2.7;}
 .player span a {font-weight:bold; color:#fff;}
 .player span a:hover {border-bottom:1px solid #464646;}
-.metaAudio {position:absolute; top:14px; left:320px; height:16px; font-size:100%; line-height:1.6;}
+.metaAudio {font-size:100%; line-height:1.8;}
 
 /* Video */
 .embed {margin-bottom:10px;}
@@ -200,7 +200,10 @@ p.answer_form_container {margin-top:9px;}
 .metaList li a,
 .metaAudio a,
 .metaAudio .plays,
-#footerNav li a {display:block; padding:0 0 0 20px; height:16px; color:#959595; font-size:100%; line-height:1.6;}
+#footerNav li a {
+    display:block; padding:0 0 0 20px; height:16px; color:#959595; font-size:100%; line-height:1.6;
+}
+
 .metaList li.author {margin-left:-7px;}
 .metaList li.tagged {padding-left:20px; white-space:nowrap;}
 .metaList li.author a,
