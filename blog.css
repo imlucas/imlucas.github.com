@@ -44,13 +44,6 @@ a:hover,
 .metaNav li a:hover,
 .metaAudio a:hover {border:0;}
 
-#title {
-    margin:0;
-    padding: 0px 0px 20px 100px; font-size:260%;
-    line-height:1;
-}
-#title a {color:#252525;}
-
 h1, h2, h3, h4, h5, h6 {margin:0 0 6px 0; color:#464646; font-family:Georgia, "Times New Roman", serif; /* font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; */}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight:normal;}
 h1 {margin-top:18px; font-size:240%; line-height:1.125;}
@@ -359,6 +352,18 @@ pre code {
     background: #FFFFFF;
 }
 
+
+#title {
+    margin:0;
+    padding: 0px 20px 0px 100px; font-size:260%;
+    line-height:1;
+    float: left;
+
+}
+#title a {
+    color:#252525;
+}
+
 h2 a {
     color: #464646;
 }
@@ -366,6 +371,9 @@ h2 a {
 #subtitle {
     padding-left: 100px;
     color: #AAA;
+    font-weight: normal;
+    padding-bottom: 32px;
+    margin-top: 2px;
 }
 
 #subtitle a {
