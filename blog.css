@@ -366,3 +366,47 @@ h2 a {
 .content h2 {
     font-size: 120%;
 }
+.box-wrap{
+    position: absolute;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    margin-left: 830px;
+    background: #FF4D00;
+    box-shadow: 1px 1px 1px rgba(0,2px,10px,0.2);
+}
+.box1 {
+    background-color: #1077c7;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 20px;
+}
+
+.box2 {
+    background-color: #333333;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 40px;
+}
+
+.box3 {
+    background-color: #FFE545;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+
+.box4 {
+    background-color: orange;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 85px;
+}
