@@ -1,0 +1,277 @@
+/*  Lucida Hybrid
+    http://www.brownbatterystudios.com/sixthings/2007/03/14/lucida-hybrid-the-grande-alternative
+*/
+
+html {
+    background:transparent;
+}
+body {
+    padding:7px 0;
+    font: 80%/1 Helvetica, sans-serif;
+    color:#707070;
+}
+
+#wrapper {
+    position:relative;
+    margin:0 auto;
+    width:98%;
+}
+
+#top {
+    margin:0 auto;
+    height:3px;
+    width:680px;
+    background:url(http://static.tumblr.com/iqfzjqj/KHnkkt8kp/shadowtop.png) -5px top repeat-x;
+}
+#topLeft {position:absolute; top:0; left:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/KHnkkt8kp/shadowtop.png) left top no-repeat;}
+#topRight {position:absolute; top:0; right:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/KHnkkt8kp/shadowtop.png) right top no-repeat;}
+#bottom {margin:0 auto; height:8px; width:680px; background:url(http://static.tumblr.com/iqfzjqj/etdkkt8j8/shadowbottom.png) -5px -2px repeat-x;}
+#bottomLeft {position:absolute; bottom:2px; left:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/etdkkt8j8/shadowbottom.png) left top repeat-x;}
+#bottomRight {position:absolute; bottom:2px; right:0; z-index:1; height:8px; width:5px; background:url(http://static.tumblr.com/iqfzjqj/etdkkt8j8/shadowbottom.png) right top repeat-x;}
+#page {position:relative; padding:0 5px; background:url(http://static.tumblr.com/iqfzjqj/KW0kkt8lb/shadowrepeat.png) left 8px repeat-y;}
+#pageInner {position:relative; padding:36px 40px 0 40px; background:#f5f5f5 url(http://static.tumblr.com/iqfzjqj/G0ykkt8g4/pageoverlay.png) left top repeat;}
+
+strong, b {font-weight:bold;}
+em, i {font-style:italic;}
+strong, em, b, i {font-family:"Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+ul li {list-style-type:disc;}
+ol li {list-style-type:decimal;}
+input, textarea, select {color:#464646; font-family:"Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+.clear {clear:both;}
+code {font-family:Monaco, "Lucida Console", "Courier New", monospace;}
+
+a {color:#464646; text-decoration:none;}
+a:hover,
+.metaAudio a:hover span,
+#pageNav a:hover span {color:#000;}
+.content a,
+.notes li a,
+#credit a {font-weight:bold;}
+.metaList li.tagged a,
+.meta a span,
+.metaAudio a span,
+#footerNav li a span,
+#pageNav a span {border-bottom:1px dotted #dcdcdc;}
+.content a:hover,
+.notes li a:hover,
+.metaList li.author a:hover,
+.metaList li.tagged a:hover,
+.meta a:hover span,
+.metaAudio a:hover span,
+#footerNav li a:hover span,
+#pageNav a:hover span {border-bottom:1px solid #dcdcdc; color:#555;}
+.metaNav li a:hover,
+.metaAudio a:hover {border:0;}
+
+#title {margin:0; padding:27px 0 9px 100px; font-size:260%; line-height:1.04;}
+#title a {color:#252525;}
+
+h1, h2, h3, h4, h5, h6 {margin:0 0 6px 0; color:#464646; font-family:Georgia, "Times New Roman", serif; /* font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; */}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight:normal;}
+h1 {margin-top:18px; font-size:240%; line-height:1.125;}
+h2 {margin-top:12px; font-size:180%; line-height:1.333;}
+h3 {margin-top:12px; font-size:160%; line-height:1.25;}
+h4 {margin-top:12px; font-size:110%; line-height:1.455; text-transform:uppercase; font-weight:bold; letter-spacing:0.2em;}
+h5 {margin-top:12px; font-size:130%; line-height:1.385;}
+h6 {margin-top:12px; font-size:120%; line-height:1.5;}
+.content h1 {font-size:218.18%}
+.content h2 {font-size:163.64%}
+.content h3 {font-size:145.45%}
+.content h4 {font-size:100%}
+.content h5 {font-size:118.18%}
+.content h6 {font-size:109.09%}
+h2.title {margin-top:0;}
+.content code {padding:2px 3px; margin:0 1px; color:#363636; background:#dcdcdc;}
+
+/* Sprites */
+a#descriptionToggle, li.posted a, li.notes a,
+li.tagged, li.comments a, a.download, .plays,
+#archive a, #mobile a, #rss a,
+#search a, #tumblr a {background:url(http://static.tumblr.com/iqfzjqj/uKzkkt8al/icons16.png) 0 0 no-repeat;}
+a#descriptionToggle {background-position:0 0;}
+a#descriptionToggle:hover {background-position:0 -16px;}
+a#descriptionToggle.active {background-position:0 -32px;}
+a#descriptionToggle.active:hover {background-position:0 -48px;}
+li.posted a {background-position:0 -64px;}
+li.posted a:hover {background-position:0 -80px;}
+li.notes a {background-position:0 -96px;}
+li.notes a:hover {background-position:0 -112px;}
+li.tagged {background-position:0 -128px;} /* .tagged:hover {background-position:0 -144px;} */
+a.download {background-position:0 -160px;}
+a.download:hover {background-position:0 -176px;}
+.plays {background-position:0 -192px;}
+#archive a {background-position:0 -208px;}
+#archive a:hover {background-position:0 -224px;}
+#search a {background-position:0 -240px;}
+#search a:hover {background-position:0 -256px;}
+#rss a {background-position:0 -272px;}
+#rss a:hover {background-position:0 -288px;}
+#mobile a {background-position:0 -304px;}
+#mobile a:hover {background-position:0 -320px;}
+#tumblr a {background-position:0 -386px;}
+#tumblr a:hover {background-position:0 -402px;}
+li.comments a {background-position:0 -416px;}
+li.comments a:hover {background-position:0 -432px;}
+
+/* Post Styling */
+.post {position:relative; clear:both; margin:0 0 9px 0; padding:8px 0 0 100px; border-top:1px solid #dcdcdc;}
+.post .icon {position:absolute; top:10px; left:0; display:block; width:32px; height:32px; background:url(http://static.tumblr.com/iqfzjqj/9iCkkt87p/icons.png) 0 0 no-repeat;}
+#description .icon {display:none; background-position:0 0;}
+.post.text .icon {background-position:-32px 0;}
+.post.photo .icon {background-position:-64px 0;}
+.post.quote .icon {background-position:-96px 0;}
+.post.link .icon {background-position:-128px 0;}
+.post.chat .icon {background-position:-160px 0;}
+.post.audio .icon {background-position:-192px 0;}
+.post.video .icon {background-position:-224px 0;}
+#disqus_thread .icon {background-position:-256px 0;}
+#twitter .icon {background-position:-288px 0;}
+.post a.icon:hover {opacity:0.8;}
+
+/* Text + Content Styling */
+.content {margin-bottom:9px; padding-right:100px; font-size:110%; line-height:1.455;}
+.content p, .content ul, .content ol {margin-bottom:6px;}
+.content ul li p, .content ol li p {margin-bottom:3px;}
+.content ul ul,
+.content ol ol,
+.content ul ol,
+.content ol ul {margin-left:2em;}
+.content blockquote {margin:9px 35px 9px 20px; border-left:5px solid #e5e5e5; padding-left:10px;}
+.content blockquote * {margin-right:0;}
+p.answer_form_container {margin-top:9px;}
+
+/* Photo */
+.media {position:relative; margin-bottom:9px;}
+.media a,
+.media a:hover,
+.media a *,
+.media a:hover * {cursor:pointer !important;}
+.media a,
+.media img {display:block; -webkit-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); -moz-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05);}
+.media a {position:relative;}
+.media .imageOverlay {z-index:2; display:block; position:absolute; top:0; left:0; background:url(http://static.tumblr.com/iqfzjqj/RyDkkt8fn/imageoverlay.png) left top repeat;}
+.media a .destination {z-index:1; opacity:0; display:none; position:absolute; top:0; right:0; width:100px; height:100px; background:url(http://static.tumblr.com/iqfzjqj/pRBkkt8d8/iconsmediaexternal.png) left top no-repeat; -webkit-transition: opacity 0.1s ease-in;}
+.media a .zoom {background:url(http://static.tumblr.com/iqfzjqj/gbNkkt8dt/iconsmediazoom.png) center center no-repeat;}
+.media a:hover .destination {opacity:1; display:block;}
+
+/* Quote */
+.quotation {position:relative; margin:0 0 9px -50px; background-color:rgb(220, 220, 220); background-color:rgba(0, 0, 0, 0.1);}
+.quotation blockquote {overflow:hidden; position:relative; padding:9px 50px 0 50px; font-size:160%; font-family:Georgia, "Times New Roman", serif; font-style:italic; line-height:1.41; color:#555;}
+.quotation blockquote .quoteWrapper {margin-bottom:9px;}
+.quotation blockquote p {margin-bottom:0.5em;}
+.quotation blockquote a {color:#111;}
+.quotation blockquote a:hover {color:#000; border-bottom:1px solid #c2c2c2;}
+.quotation blockquote .left,
+.quotation blockquote .right,
+.quotation .source {background:url(http://static.tumblr.com/iqfzjqj/Wzlkkt8io/quotation.png) 0 0 no-repeat;}
+.quotation .source {position:absolute; top:9px; left:-13px; display:block; width:13px; height:9px; background-position:0 0;}
+.quotation blockquote .left {display:block; position:absolute; top:0; left:10px; width:26px; height:21px; background-position:0 -9px; text-indent:-9999px;}
+.quotation blockquote .right {z-index:1; display:block; position:absolute; bottom:0; right:10px; width:26px; height:21px; background-position:0 -30px; text-indent:-9999px;}
+.quotation.short blockquote {font-size:225%; line-height:1.3;}
+.quotation.long  blockquote {padding-top:12px;}
+.quotation.long  blockquote .quoteWrapper {margin-bottom:14px;}
+
+/* Link */
+.link h2 a .arrow {padding:0 8px; background:#bfbfbf url(http://static.tumblr.com/iqfzjqj/o4Akkt86m/iconlink.png) left top no-repeat; font-family:Arial; font-size:14px; line-height:1; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;}
+.link h2 a:hover .arrow {cursor:pointer;}
+.link h2 a:hover .string {border-bottom:1px solid #dcdcdc;}
+
+/* Chat */
+.transcript {margin:0 0 9px 0;}
+.transcript dt {color:#464646; font-size:109.091%; line-height:1.33;}
+.transcript dd {padding-left:10px; margin-bottom:6px;}
+
+/* Audio */
+.audio {position:relative;}
+.player {margin-bottom:9px; width:207px; min-height:27px; background:#000; color:#fff; text-align:center;}
+.player span {line-height:2.7;}
+.player span a {font-weight:bold; color:#fff;}
+.player span a:hover {border-bottom:1px solid #464646;}
+.metaAudio {position:absolute; top:14px; left:320px; height:16px; font-size:100%; line-height:1.6;}
+
+/* Video */
+.embed {margin-bottom:10px;}
+.embed object,
+.embed embed {width:500px; -webkit-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); -moz-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05);}
+
+/* Meta */
+.meta {margin:14px 0 0 0; font-size:100%;}
+.metaList {display:block;}
+.metaList li {display:block; float:left; list-style:none; margin:0 10px 6px 0;}
+.metaList li a,
+.metaAudio a,
+.metaAudio .plays,
+#footerNav li a {display:block; padding:0 0 0 20px; height:16px; color:#959595; font-size:100%; line-height:1.6;}
+.metaList li.author {margin-left:-7px;}
+.metaList li.tagged {padding-left:20px; white-space:nowrap;}
+.metaList li.author a,
+.metaList li.tagged a {display:inline; height:auto; margin:0; padding:0; border-bottom:1px dotted #dcdcdc}
+.metaList li.tagged a {margin-right:5px;}
+.metaAudio a,
+.metaAudio .plays {float:left; margin-right:10px;}
+.metaAudio a.download {color:#464646;}
+
+/* Notes */
+#notes {margin:3px 0 9px 0; padding:8px 100px 9px 0; border-top:1px dotted #dcdcdc;}
+.notes li {margin-bottom:6px; list-style-type:none; min-height:16px; font-size:110%; line-height:16px;}
+.notes li .avatar {padding-right:3px; vertical-align:middle;}
+.notes li blockquote {margin:6px 28px 8px 28px; padding:0 0 0 5px; border-left:5px solid #E5E5E5; font-size:90.91%;}
+.notes li blockquote a {font-weight:normal; color:#959595;}
+.notes li blockquote a:hover {color:#555;}
+
+/* Description */
+#description {display:none; margin:0; padding:0; border:0; background:none;}
+#description .content {padding:8px 50px 9px 100px; margin-bottom:0; border-top:1px solid #dcdcdc;}
+#description .content .icon {display:none;}
+a#descriptionToggle {display:none; position:absolute; top:75px; right:40px; width:16px; height:16px; text-indent:-9999px; outline:0;}
+
+/* Pagination */
+#pageNav {clear:both; border-top:1px solid #dcdcdc;}
+#pageNav a, #pageCount {float:left; display:block; padding:8px 0; width:100px;}
+#pageNav a {color:#c1c1c1;}
+#pageNav a:hover {color:#7a7a7a;}
+#pageNav a span {color:#464646;}
+#pageNav a:hover span {color:#000;}
+#pageCount {color:#959595;}
+#pageNav a#following {float:right;}
+
+/* Footer */
+#footer {clear:both; margin:0; padding:8px 0 17px 100px; border-top:1px solid #dcdcdc;}
+#footerNav {width:500px;}
+#footerNav li {float:left; margin-bottom:6px; width:100px; list-style:none;}
+#footerNav li a {display:block;}
+#footerNav #search {position:relative; cursor:pointer;}
+#searchForm {display:none; position:absolute; top:-3px; left:0; width:200px;}
+#searchForm #searchField {width:172px; height:13px; padding:2px 3px 3px 3px; border:1px solid #dcdcdc; font-size:110%;}
+#searchForm #searchSubmit {position:absolute; top:2px; right:0; width:16px; height:16px; background:#bfbfbf url(http://static.tumblr.com/iqfzjqj/o4Akkt86m/iconlink.png) left top no-repeat;  -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;}
+#footerNav li#tumblr a {display:block; width:59px; height:14px; text-indent:-9999px; line-height:1;}
+#credit {clear:both; margin-top:46px;}
+#credit a {border-bottom:1px dotted #dcdcdc;}
+
+/* Twitter */
+#twitter {display:none;}
+
+/* Thickbox */
+#TB_overlay {position:fixed; z-index:9997; top:0px; left:0px; height:100%; width:100%; cursor:pointer;}
+#TB_overlay:hover {cursor:pointer;}
+.TB_overlayBG {background-color:#000; filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8;}
+* html #TB_overlay {
+    position:absolute;height:expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight :document.body.offsetHeight + 'px');}
+#TB_window {position:fixed; z-index:10000; display:none; top:50%; left:50%;}
+* html #TB_window {
+    position:absolute;margin-top:expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');}
+#TB_window {-webkit-box-shadow:-3px 3px 10px rgba(0, 0, 0, 0.25); -moz-box-shadow:-3px 3px 10px rgba(0, 0, 0, 0.25); box-shadow:-3px 3px 10px rgba(0, 0, 0, 0.25);}
+#TB_window #TB_Image {display:block;}
+a#TB_ImageOff {display:block;}
+#TB_caption,
+#TB_closeWindow {display:none;}
+#TB_load {position:fixed; display:none; height:100px; width:100px; z-index:9998; top:50%; left:50%; margin:-50px 0 0 -50px; /* -height/2 0 0 -width/2 */ background-color:#000; background-color:#fff;  filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -webkit-box-shadow:0 0 40px rgba(0, 0, 0, 0.2);}
+#TB_load img {display:block; width:32px; height:32px; margin:34px 0 0 34px;}
+* html #TB_load {
+    position:absolute; margin-top:expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');}
+#TB_HideSelect {z-index:99; position:fixed; top:0; left:0; background-color:#fff; border:none; filter:alpha(opacity=0); -moz-opacity:0; opacity:0; height:100%; width:100%;}
+* html #TB_HideSelect {
+    position:absolute; height:expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight :document.body.offsetHeight + 'px');}
+a#TB_closeWindowButton {display:block; position:fixed; top:-25px; right:-25px; z-index:9999; width:200px; height:200px; background:url(http://static.tumblr.com/iqfzjqj/N6vkkt8bh/iconsmediaclose.png) center center no-repeat; text-indent:-9999px; opacity:0.5; outline:none; -webkit-transition: opacity 0.1s ease-in;}
+a#TB_closeWindowButton:hover,
+#TB_overlay:hover + div + a#TB_closeWindowButton {opacity:1;}
