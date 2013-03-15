@@ -126,10 +126,18 @@ li.comments a:hover {background-position:0 -432px;}
 .post.video .icon {background-position:-224px 0;}
 #disqus_thread .icon {background-position:-256px 0;}
 #twitter .icon {background-position:-288px 0;}
-.post a.icon:hover {opacity:0.8;}
+.post a.icon:hover {
+    opacity:0.8;
+}
 
 /* Text + Content Styling */
-.content {margin-bottom:9px; padding-right:100px; font-size:110%; line-height:1.455;}
+.content {
+    margin-bottom:9px;
+    padding-right:100px;
+    font-size:120%;
+    line-height:1.8;
+}
+
 .content p, .content ul, .content ol {margin-bottom:6px;}
 .content ul li p, .content ol li p {margin-bottom:3px;}
 .content ul ul,
