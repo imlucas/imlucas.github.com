@@ -243,18 +243,10 @@ a#descriptionToggle {display:none; position:absolute; top:75px; right:40px; widt
 #pageNav a#following {float:right;}
 
 /* Footer */
-#footer {clear:both; margin:0; padding:8px 0 17px 100px; border-top:1px solid #dcdcdc;}
-#footerNav {width:500px;}
-#footerNav li {float:left; margin-bottom:6px; width:100px; list-style:none;}
-#footerNav li a {display:block;}
-#footerNav #search {position:relative; cursor:pointer;}
-#searchForm {display:none; position:absolute; top:-3px; left:0; width:200px;}
-#searchForm #searchField {width:172px; height:13px; padding:2px 3px 3px 3px; border:1px solid #dcdcdc; font-size:110%;}
-#searchForm #searchSubmit {position:absolute; top:2px; right:0; width:16px; height:16px; background:#bfbfbf url(http://static.tumblr.com/iqfzjqj/o4Akkt86m/iconlink.png) left top no-repeat;  -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;}
-#footerNav li#tumblr a {display:block; width:59px; height:14px; text-indent:-9999px; line-height:1;}
-#credit {clear:both; margin-top:46px;}
-#credit a {border-bottom:1px dotted #dcdcdc;}
-
+#footer {clear:both; margin:0; padding:8px 0 17px 100px; border-top:1px solid #dcdcdc; text-align: center;}
+#footer a {
+    color: #dcdcdc;
+}
 /* Twitter */
 #twitter {display:none;}
 
@@ -386,7 +378,7 @@ h2 a {
 .box-wrap{
     position: absolute;
     overflow: hidden;
-    height: 150px;
+    height: 108px;
     width: 150px;
     right: 0;
     background: #FF4D00;
