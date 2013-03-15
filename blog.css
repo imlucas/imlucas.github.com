@@ -363,13 +363,22 @@ h2 a {
     color: #464646;
 }
 
+#subtitle {
+    padding-left: 100px;
+    color: #AAA;
+}
+
+#subtitle a {
+    color: #AAA;
+}
+
 .content h2 {
     font-size: 120%;
 }
 .box-wrap{
     position: absolute;
     overflow: hidden;
-    height: 91px;
+    height: 150px;
     width: 150px;
     right: 0;
     background: #FF4D00;
