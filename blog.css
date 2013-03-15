@@ -243,9 +243,9 @@ a#descriptionToggle {display:none; position:absolute; top:75px; right:40px; widt
 #pageNav a#following {float:right;}
 
 /* Footer */
-#footer {clear:both; margin:0; padding:8px 0 17px 100px; border-top:1px solid #dcdcdc; text-align: center;}
+#footer {color: #AAA; clear:both; margin:0; padding:8px 0 17px 100px; border-top:1px solid #dcdcdc; text-align: center;}
 #footer a {
-    color: #dcdcdc;
+    color: #AAA;
 }
 /* Twitter */
 #twitter {display:none;}
