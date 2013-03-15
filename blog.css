@@ -55,7 +55,6 @@ pre code {
 
 #page {
     position:relative;
-    padding:0 5px;
     box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
@@ -115,7 +114,6 @@ h6 {margin-top:12px; font-size:120%; line-height:1.5;}
 .content h5 {font-size:118.18%}
 .content h6 {font-size:109.09%}
 h2.title {margin-top:0;}
-.content code {padding:2px 3px; margin:0 1px; color:#363636; background:#dcdcdc;}
 
 /* Sprites */
 a#descriptionToggle, li.posted a, li.notes a,
