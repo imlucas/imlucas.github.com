@@ -2,72 +2,6 @@
     http://www.brownbatterystudios.com/sixthings/2007/03/14/lucida-hybrid-the-grande-alternative
 */
 
-html {
-    background:transparent;
-}
-body {
-    padding:20px 0;
-    font: 80%/1 Helvetica, sans-serif;
-    color:#707070;
-}
-
-pre, code {
-  width: 100%;
-  color: #222;
-  background-color: #fff;
-
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 14px;
-
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-}
-
-pre {
-  width: 100%;
-  padding: 10px;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-  overflow: auto;
-  background: #f1f4f5;
-}
-
-code {
-  padding: 3px;
-  margin: 0 3px;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-  background: #f1f4f5;
-}
-a code {
-  border: 1px solid #1077c7;
-  color: #1077c7;
-}
-pre code {
-  display: block;
-  box-shadow: none;
-}
-
-#wrapper {
-    position:relative;
-    margin:0 auto;
-    width:98%;
-}
-
-#page {
-    position:relative;
-    box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-#pageInner {
-    position:relative;
-    padding:36px 40px 0 40px;
-    background: #FFFFFF;
-}
-
-h2 a {
-    color: #464646;
-}
-
 strong, b {font-weight:bold;}
 em, i {font-style:italic;}
 strong, em, b, i {font-family:"Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
@@ -324,3 +258,80 @@ a#TB_ImageOff {display:block;}
 a#TB_closeWindowButton {display:block; position:fixed; top:-25px; right:-25px; z-index:9999; width:200px; height:200px; background:url(http://static.tumblr.com/iqfzjqj/N6vkkt8bh/iconsmediaclose.png) center center no-repeat; text-indent:-9999px; opacity:0.5; outline:none; -webkit-transition: opacity 0.1s ease-in;}
 a#TB_closeWindowButton:hover,
 #TB_overlay:hover + div + a#TB_closeWindowButton {opacity:1;}
+
+
+
+
+
+
+
+
+html {
+    background:transparent;
+}
+body {
+    padding:20px 0;
+    font: 80%/1 Helvetica, sans-serif;
+    color:#707070;
+}
+
+pre, code {
+  width: 100%;
+  color: #222;
+  background-color: #fff;
+
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 14px;
+
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+pre {
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+  overflow: auto;
+  background: #f1f4f5;
+}
+
+code {
+  padding: 3px;
+  margin: 0 3px;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+  background: #f1f4f5;
+}
+a code {
+  border: 1px solid #1077c7;
+  color: #1077c7;
+}
+pre code {
+  display: block;
+  box-shadow: none;
+}
+
+#wrapper {
+    position:relative;
+    margin:0 auto;
+    width:98%;
+}
+
+#page {
+    position:relative;
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+#pageInner {
+    position:relative;
+    padding:36px 40px 0 40px;
+    background: #FFFFFF;
+}
+
+h2 a {
+    color: #464646;
+}
+
+.content h2 {
+    font-size: 120%;
+}
