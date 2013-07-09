@@ -120,7 +120,7 @@ li.comments a:hover {background-position:0 -432px;}
     -webkit-font-smoothing: antialiased;
 }
 
-.content p, .content ul, .content ol {margin-bottom:6px;}
+.content p, .content ul, .content ol {margin-bottom:40px;}
 .content ul li p, .content ol li p {margin-bottom:3px;}
 .content ul ul,
 .content ol ol,
@@ -290,8 +290,6 @@ html {
     background:transparent;
 }
 body {
-    font: 80%/1 Helvetica, sans-serif;
-    color:#707070;
     margin: 0;
     padding: 28px 0;
 }
@@ -358,11 +356,11 @@ pre code {
 
 }
 #title a {
-    color:#252525;
+    color:#333333;
 }
 
 h2 a {
-    color: #464646;
+    color: #333333;
 }
 
 #subtitle {
