@@ -192,7 +192,7 @@ p.answer_form_container {margin-top:9px;}
 }
 
 /* Video */
-.embed {margin-bottom:10px;}
+.embed {margin-bottom:10px;font-size: 0;}
 .embed object,
 .embed embed {width:500px; -webkit-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); -moz-box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05); box-shadow:-1px 1px 3px rgba(0, 0, 0, 0.05);}
 
