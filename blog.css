@@ -15,18 +15,18 @@ input, textarea, select {color:#464646; font-family:"Lucida Sans Unicode", "Luci
 .clear {clear:both;}
 code {font-family:Monaco, "Lucida Console", "Courier New", monospace;}
 
-a {color:#1077C6; text-decoration:none;}
+a {color:#333333; text-decoration:underline;}
 
 
 a:hover,
 .metaAudio a:hover span,
-#pageNav a:hover span {color:#000;}
+#pageNav a:hover span {color:#1077C6;}
 
 
 
 .content a,
 .notes li a,
-#credit a {font-weight:bold;}
+#credit a {font-weight:normal;}
 .metaList li.tagged a,
 .meta a span,
 .metaAudio a span,
