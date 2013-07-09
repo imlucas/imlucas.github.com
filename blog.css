@@ -425,3 +425,8 @@ h2 a {
     margin-top: 65px;
     margin-left: 85px;
 }
+
+pre.prettyprint {
+    padding: 10px;
+    border: 0;
+}
