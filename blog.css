@@ -2,6 +2,10 @@
     http://www.brownbatterystudios.com/sixthings/2007/03/14/lucida-hybrid-the-grande-alternative
 */
 
+body{
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    color: #333333;
+}
 strong, b {font-weight:bold;}
 em, i {font-style:italic;}
 strong, em, b, i {font-family:"Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
@@ -44,7 +48,7 @@ a:hover,
 .metaNav li a:hover,
 .metaAudio a:hover {border:0;}
 
-h1, h2, h3, h4, h5, h6 {margin:0 0 6px 0; color:#464646; font-family:Georgia, "Times New Roman", serif; /* font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; */}
+h1, h2, h3, h4, h5, h6 {margin:0 0 6px 0; color:#333333; font-family: "Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight:normal;}
 h1 {margin-top:18px; font-size:240%; line-height:1.125;}
 h2 {margin-top:12px; font-size:180%; line-height:1.333;}
