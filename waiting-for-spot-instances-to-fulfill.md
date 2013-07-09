@@ -1,6 +1,6 @@
 # Waiting for Spot Instances to Be Fulfilled with Boto
 
-Something I do constantly is start spot instances, wait for them to be fullfilled
+Something I do constantly is start spot instances, wait for them to be fulfilled
 and then work with them.  I finally got around to just scripting this yesterday.
 
     import boto
