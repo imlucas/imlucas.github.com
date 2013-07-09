@@ -95,7 +95,7 @@ li.comments a {background-position:0 -416px;}
 li.comments a:hover {background-position:0 -432px;}
 
 /* Post Styling */
-.post {position:relative; clear:both; margin:0 0 60px 0; padding:20px 0 0 100px; border-top:1px solid #dcdcdc;}
+.post {position:relative; clear:both; margin:0 0 60px 0; padding:20px 0 0 100px;}
 .post .icon {position:absolute; top:10px; left:0; display:block; width:32px; height:32px; background:url(http://static.tumblr.com/iqfzjqj/9iCkkt87p/icons.png) 0 0 no-repeat;}
 #description .icon {display:none; background-position:0 0;}
 .post.text .icon {background-position:-32px 0;}
