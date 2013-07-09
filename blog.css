@@ -200,7 +200,7 @@ p.answer_form_container {margin-top:9px;}
 }
 
 
-.metaList {display:block;}
+.metaList {display:block; padding: 0;}
 .metaList li {display:block; float:left; list-style:none; margin:0 10px 6px 0;}
 .metaList li a,
 .metaAudio a,
