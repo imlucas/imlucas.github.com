@@ -194,10 +194,9 @@ p.answer_form_container {margin-top:9px;}
 
 /* Meta */
 .meta {
-    float: right;
     margin: 0;
     font-size:100%;
-    padding-right: 100px;
+    padding-left: 0px;
 }
 
 
