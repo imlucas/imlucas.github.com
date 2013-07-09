@@ -73,7 +73,7 @@ li.posted a {background-position:0 -64px;}
 li.posted a:hover {background-position:0 -80px;}
 li.notes a {background-position:0 -96px;}
 li.notes a:hover {background-position:0 -112px;}
-li.tagged {background-position:0 -128px;} /* .tagged:hover {background-position:0 -144px;} */
+li.tagged {background-position:0 -127px;} /* .tagged:hover {background-position:0 -144px;} */
 a.download {background-position:0 -160px;}
 a.download:hover {background-position:0 -176px;}
 .plays {background-position:0 -192px;}
