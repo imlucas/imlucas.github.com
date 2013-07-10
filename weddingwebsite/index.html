@@ -183,6 +183,7 @@
 
       #myCarousel {
         max-height: 500px;
+        min-height: 500px;
         overflow: hidden;
       }
 
@@ -503,11 +504,11 @@
             });
 
             $("a[href^='#']").on('click', function(e) {
-               $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 300);
+               $('html, body').animate({ scrollTop: $(this.hash).offset().top - $('#top').height() }, 300);
                return false;
             });
 
-            $('.carousel').carousel({interval: 1500});
+            $('.carousel').carousel({interval: 3000});
         </script>
   </body>
 </html>
