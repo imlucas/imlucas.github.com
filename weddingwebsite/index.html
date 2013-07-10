@@ -87,7 +87,8 @@
 
 
       .section {
-        text-align: center;
+        /*text-align: center;*/
+        margin-bottom: 80px;
       }
 
       .linebreak{
@@ -117,7 +118,7 @@
 
       .navbar {
         margin-bottom: 0;
-        max-width: 702px;
+        /*max-width: 702px;*/
         margin: auto;
       }
 
@@ -145,18 +146,19 @@
       }
 
       .section img {
-        margin-left: 10%;
+/*        margin-left: 10%;
         margin-right: 10%;
-        width: 80%;
+        width: 80%;*/
         /*-webkit-filter: blur(2px); filter: url(#blur-effect-1);*/
+        width: 100%;
       }
       .section p {
-        padding-left: 15%;
-        padding-right: 15%;
+/*        padding-left: 15%;
+        padding-right: 15%;*/
       }
       #things {
         text-align: left;
-        padding-left: 15%;
+        /*padding-left: 15%;*/
       }
       #things ul{
         list-style: none;
@@ -166,11 +168,22 @@
       #things .nav-pills > li {
         float: none;
       }
+
+      #hotels .img-polaroid{
+        max-height: 200px;
+        overflow: hidden;
+      }
+
       #transportation dd, #transportation dt{
         display: inline-table;
       }
       #transportation dd {
         margin-right: 40px;
+      }
+
+      #myCarousel {
+        max-height: 500px;
+        overflow: hidden;
       }
 
       @media (min-width: 1200px){
@@ -184,7 +197,7 @@
         }
         .navbar {
           margin-bottom: 0;
-          max-width: 842px;
+          /*max-width: 842px;*/
           margin: auto;
         }
         #card {
@@ -195,7 +208,7 @@
   </head>
 
   <body>
-    <div class="navbar" id="top">
+    <div class="navbar navbar-fixed-top" id="top">
       <div class="navbar-inner">
         <div class="container-narrow">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -217,7 +230,7 @@
       </div>
     </div>
 
-    <div class="container-narrow" id="card">
+<!--     <div class="container-narrow" id="card">
       <div class="jumbotron img-polaroid">
         <div style="float: right;">
           <img src="jandl.jpg" />
@@ -231,141 +244,184 @@
         </div>
         <div style="clear: both;"></div>
       </div>
-      <img src="wilys.jpg" class="img-polaroid"/>
+    </div> -->
+
+    <div class="container-fluid" style="position: relative;  max-height: 600px; overflow: hidden;background: url(wilys.jpg) 50% 0 no-repeat fixed; min-height: 800px; background-size: 100%;">
+      <div style="position: absolute; color: #FFFFFF; margin-top: 5%; margin-left: 10%; text-shadow: 3px 3px rgba(0,0,0,0.8);">
+        <h1 class="heading">Jessie &amp; Lucas<br />are getting married!</h1>
+        <h3>Saturday, September 28th, 2013</h3>
+        <h4>The National Aviary</h4>
+        <h4>Pittsburgh, PA</h4>
+      </div>
     </div>
 
-    <div class="container-narrow" id="main">
-
-
+    <div class="container-fluid" id="main">
       <div class="section" id="wedding">
-        <h3>The Wedding &amp; The Party</h3>
-        <p>
-          Our wedding will be held with the birds at:
-        </p>
-        <p>
-          <a href="https://maps.google.com/maps?q=The+national+Aviary&amp;hl=en&amp;ll=40.45387,-80.010166&amp;spn=0.079941,0.181103&amp;sll=40.697488,-73.979681&amp;sspn=0.637202,1.448822&amp;hq=The+National+Aviary&amp;radius=15000&amp;t=m&amp;z=13&amp;iwloc=A">The National Aviary</a><br />
-          700 Arch St, Pittsburgh PA<br />
-          Ceremony 6:00PM<br />
-          Reception immediately following<br /><br />
-        </p>
-        <img class="img-polaroid" src="http://www.pghcitypaper.com/binary/2f46/48_architecture.jpg"/>
+        <div class="row-fluid">
+        <div class="span4">
+          <h3>The Wedding &amp; The Party</h3>
+          <p>
+            Our wedding will be held with the birds at:
+          </p>
+          <p>
+            <a href="https://maps.google.com/maps?q=The+national+Aviary&amp;hl=en&amp;ll=40.45387,-80.010166&amp;spn=0.079941,0.181103&amp;sll=40.697488,-73.979681&amp;sspn=0.637202,1.448822&amp;hq=The+National+Aviary&amp;radius=15000&amp;t=m&amp;z=13&amp;iwloc=A">The National Aviary</a><br />
+            700 Arch St, Pittsburgh PA<br />
+            Ceremony 6:00PM<br />
+            Reception immediately following<br /><br />
+          </p>
 
-        <p>
-          Shuttles will be available between the Omni and Doubletree hotels<br />
-          and The Aviary before and after the wedding/reception.
-        </p>
+          <p>
+            Shuttles will be available between the Omni and Doubletree hotels<br />
+            and The Aviary before and after the wedding/reception.
+          </p>
+        </div>
+        <div class="span8">
+          <div id="myCarousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item">
+              <img src="img/aviary/48_architecture.jpg"/>
+            </div>
+            <div class="item">
+              <img src="img/aviary/a-two-toed-sloth-also.jpg"/>
+            </div>
+            <div class="item">
+              <img src="img/aviary/Baby1.jpg"/>
+            </div>
+            <div class="item">
+              <img src="img/aviary/BabyOwl1.jpg"/>
+            </div>
+            <div class="item">
+              <img src="img/aviary/curassow.jpg"/>
+            </div>
+            <div class="item">
+              <img src="img/aviary/OwlSwooping.jpg"/>
+            </div>
+          </div>
+          <!-- Carousel nav -->
+       <!--    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> -->
+        </div>
+
+        </div>
       </div>
 
-      <a class="btn linebreak" href="#top"><i class="icon-upload icon-white"></i></a>
+      </div>
 
       <div class="section" id="hotels">
-        <h3>Where to Stay</h3>
+        <div class="row-fluid">
+          <div class="span4">
+            <h3>Where to Stay</h3>
+            <p>
+              We've reserved a block of rooms at the Omni William Penn and the DoubleTree -- located in bustling downtown, both are an easy 5-minute cab ride from the Aviary on the North Side as well as many other great Pittsburgh destinations (<a href="#things-to-do">see map below</a>).
+            </p>
 
-        <div>
-        <p>
-          We've reserved a block of rooms at the Omni William Penn and the DoubleTree -- located in bustling downtown, both are an easy 5-minute cab ride from the Aviary on the North Side as well as many other great Pittsburgh destinations (<a href="#things-to-do">see map below</a>).
-        </p>
-        <div id="doubletree">
-          <img class="img-polaroid"  src="doubletree-by-hilton.jpg" />
-          <dl>
-            <dt>The DoubleTree Downtown</dt>
-            <dd>$169 per night</dd>
-            <dd><a href="http://doubletree.hilton.com/en/dt/groups/personalized/P/PITDTDT-PHW-20130927/index.jhtml?WT.mc_id=POG">book online now</a></dd>
-            <dd>Airport Shuttle Available</dd>
-          </dl>
+            <p>
+              Prefer something smaller?  Try <a href="http://www.thepriory.com/">The Priory Hotel</a> or
+              <a href="http://theparadorinn.com/">The Parador Inn</a>
+            </p>
+          </div>
+
+          <div class="span4">
+            <img class="img-polaroid" src="doubletree-by-hilton.jpg"/>
+            <dl>
+              <dt>The DoubleTree Downtown</dt>
+              <dd>$169 per night</dd>
+              <dd><a href="http://doubletree.hilton.com/en/dt/groups/personalized/P/PITDTDT-PHW-20130927/index.jhtml?WT.mc_id=POG">book online now</a></dd>
+              <dd>Airport Shuttle Available</dd>
+            </dl>
+          </div>
+
+          <div class="span4">
+            <img class="img-polaroid" src="omniwilliampennpittsburgh.jpg"/>
+            <dl>
+              <dt>Omni William Penn</dt>
+              <dd>$160 per night</dd>
+              <dd>call 412.281.7100 to book</dd>
+              <dd>mention the Pastore/Hrabovsky Wedding</dd>
+            </dl>
+          </div>
         </div>
-
-        <div id="omni">
-          <img class="img-polaroid" src="omniwilliampennpittsburgh.jpg"/>
-          <dl>
-            <dt>Omni William Penn</dt>
-            <dd>$160 per night</dd>
-            <dd>call 412.281.7100 to book</dd>
-            <dd>mention the Pastore/Hrabovsky Wedding</dd>
-          </dl>
-        </div>
-
-        <p>
-            Prefer something smaller?  Try <a href="http://www.thepriory.com/">The Priory Hotel</a> or
-            <a href="http://theparadorinn.com/">The Parador Inn</a>
-        </p>
       </div>
-      <a class="btn linebreak" href="#top"><i class="icon-upload icon-white"></i></a>
 
       <div class="section" id="things-to-do">
-      <h3>Things to Do</h3>
-        <iframe class="img-polaroid" width="80%" height='500' frameBorder="0"
+        <h3>Things to Do</h3>
+        <iframe width="100%" height='500' frameBorder="0"
             src='http://a.tiles.mapbox.com/v3/lucius910.map-i7lx1saq.html#13/40.44221253323462/-79.99974799848286'></iframe>
-        <div id="things"></div>
+        <div id="things" class="row-fluid"></div>
       </div>
-      <div class="linebreak"><i class="icon-upload icon-white"></i></div>
-
-      <div class="section" id="registry">
-        <h3>Registry</h3>
-        <p>
-          We are registered at <a href="http://www.williams-sonoma.com/registry/3119715/registry-list.html">
-          Williams Sonoma</a> and
-          <a href="http://www.crateandbarrel.com/Gift-Registry/Jessie-Pastore-and-Lucas-Hrabovsky/r4995644">
-            Crate &amp; Barrel</a>.
-        </p>
-      </div>
-      <a class="btn linebreak" href="#top"><i class="icon-upload icon-white"></i></a>
 
       <div class="section" id="transportation">
-        <h3>Getting There</h3>
-        <img class="img-polaroid" src="bridge.jpg" widtgh="100%" style="margin-bottom: 40px;"/>
-        <p>
-          If flying in to the <a href="http://www.pitairport.com/" target="_blank">
-          Pittsburgh International Airport (PIT)</a>,
-          downtown is just a quick 25 minute drive.
-          If you're planning to explore
-          the area a bit, there are plenty of car rental counters near the
-          baggage claim and rates are quite reasonable.
-          Proceed to the landside terminal, lower level, exit through the
-          &quot;commercial&quot; doors, and proceed to the taxi stand area on
-          the curb.
-          On average, you can expect to pay:
-        </p>
-        <dl>
-          <dt>Taxi</dt>
-          <dd>$40</dd>
-          <dt>Shuttle</dt>
-          <dd>$25</dd>
-          <dt>Private Car</dt>
-          <dd>$65</dd>
-        </dl>
+        <div class="row-fluid">
+          <div class="span6">
+            <h3>Getting There</h3>
+            <p>
+              If flying in to the <a href="http://www.pitairport.com/" target="_blank">
+              Pittsburgh International Airport (PIT)</a>,
+              downtown is just a quick 25 minute drive.
+              If you're planning to explore
+              the area a bit, there are plenty of car rental counters near the
+              baggage claim and rates are quite reasonable.
+              Proceed to the landside terminal, lower level, exit through the
+              &quot;commercial&quot; doors, and proceed to the taxi stand area on
+              the curb.
+              On average, you can expect to pay:
+            </p>
+            <dl>
+              <dt>Taxi</dt>
+              <dd>$40</dd>
+              <dt>Shuttle</dt>
+              <dd>$25</dd>
+              <dt>Private Car</dt>
+              <dd>$65</dd>
+            </dl>
 
-        <p>
-          All major hotels in the downtown area have taxis waiting outside their
-          front doors.  In other areas of the city, look for taxi stands or
-          call Yellow Cab Co. 412.321.8100.  There is also a small metro
-          connecting the downtown that is clean, fast, and free.
-        </p>
+            <p>
+              All major hotels in the downtown area have taxis waiting outside their
+              front doors.  In other areas of the city, look for taxi stands or
+              call Yellow Cab Co. 412.321.8100.  There is also a small metro
+              connecting the downtown that is clean, fast, and free.
+            </p>
 
-        <p>
-          <a href="http://doubletree3.hilton.com/en/hotels/pennsylvania/doubletree-by-hilton-hotel-and-suites-pittsburgh-downtown-PITDTDT/maps-directions/index.html" target="_blank">Directions to the DoubleTree Downtown Hotel</a> (<a href="https://maps.google.com/maps?q=DoubleTree+by+Hilton+Hotel+%26+Suites+Pittsburgh+Downtown,+1+Bigelow+Square,+Pittsburgh,+PA&hl=en&ll=40.443159,-79.994202&spn=0.022177,0.044246&sll=40.697488,-73.979681&sspn=0.706955,1.415863&oq=doubletree&t=h&hq=DoubleTree+by+Hilton+Hotel+%26+Suites+Pittsburgh+Downtown,+1+Bigelow+Square,+Pittsburgh,+PA&z=15">map</a>)
-        </p>
-        <p>
-          <a href="http://www.omnihotels.com/FindAHotel/PittsburghWilliamPenn/MapAndDirections.aspx">Directions to The Omni William Penn Hotel</a> (<a href="https://maps.google.com/maps?q=Omni+William+Penn+Hotel,+530+William+Penn+Place,+Pittsburgh,+PA&hl=en&ll=40.440709,-79.996734&spn=0.022177,0.044246&sll=40.443159,-79.994202&sspn=0.022177,0.044246&oq=Omni+&t=h&hq=Omni+William+Penn+Hotel,+530+William+Penn+Place,+Pittsburgh,+PA&z=15">map</a>)
-        </p>
-        <p>
-          <a href="http://www.aviary.org/directions-and-lodging" target="_blank">Directions to The National Aviary</a> (<a href="https://maps.google.com/maps?q=National+Aviary,+700+Arch+St,+Pittsburgh,+PA&hl=en&sll=40.440709,-79.996734&sspn=0.022177,0.044246&oq=The+Nation&t=h&hq=National+Aviary,&hnear=700+Arch+St,+Pittsburgh,+Allegheny,+Pennsylvania+15212&z=16">map</a>)
-        </p>
+            <p>
+              <a href="http://doubletree3.hilton.com/en/hotels/pennsylvania/doubletree-by-hilton-hotel-and-suites-pittsburgh-downtown-PITDTDT/maps-directions/index.html" target="_blank">Directions to the DoubleTree Downtown Hotel</a> (<a href="https://maps.google.com/maps?q=DoubleTree+by+Hilton+Hotel+%26+Suites+Pittsburgh+Downtown,+1+Bigelow+Square,+Pittsburgh,+PA&hl=en&ll=40.443159,-79.994202&spn=0.022177,0.044246&sll=40.697488,-73.979681&sspn=0.706955,1.415863&oq=doubletree&t=h&hq=DoubleTree+by+Hilton+Hotel+%26+Suites+Pittsburgh+Downtown,+1+Bigelow+Square,+Pittsburgh,+PA&z=15">map</a>)
+            </p>
+            <p>
+              <a href="http://www.omnihotels.com/FindAHotel/PittsburghWilliamPenn/MapAndDirections.aspx">Directions to The Omni William Penn Hotel</a> (<a href="https://maps.google.com/maps?q=Omni+William+Penn+Hotel,+530+William+Penn+Place,+Pittsburgh,+PA&hl=en&ll=40.440709,-79.996734&spn=0.022177,0.044246&sll=40.443159,-79.994202&sspn=0.022177,0.044246&oq=Omni+&t=h&hq=Omni+William+Penn+Hotel,+530+William+Penn+Place,+Pittsburgh,+PA&z=15">map</a>)
+            </p>
+            <p>
+              <a href="http://www.aviary.org/directions-and-lodging" target="_blank">Directions to The National Aviary</a> (<a href="https://maps.google.com/maps?q=National+Aviary,+700+Arch+St,+Pittsburgh,+PA&hl=en&sll=40.440709,-79.996734&sspn=0.022177,0.044246&oq=The+Nation&t=h&hq=National+Aviary,&hnear=700+Arch+St,+Pittsburgh,+Allegheny,+Pennsylvania+15212&z=16">map</a>)
+            </p>
+          </div>
+          <div class="span6">
+            <img class="img-polaroid" src="bridge.jpg" widtgh="100%"/>
+          </div>
+        </div>
       </div>
-      <a class="btn linebreak" href="#top"><i class="icon-upload icon-white"></i></a>
 
-      <div id="section" id="contact">
-        <h3>Feel free to contact us with questions!</h3>
-        <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-prn2/970072_651327831744_769087365_n.jpg" class="img-polaroid"/>
-        <p>
-          <a href="mailto:jess.pastore@gmail.com">Jess Pastore<a/> &amp;
-          <a href="mailto:hrabovsky.lucas@gmail.com">Lucas Hrabovsky</a>
-        </p>
-        <p>
-          Check back soon for Pittsburgh trivia, and an explanation for our ridiculous love of owls.
-        </p>
+      <div id="section">
+        <div class="row-fluid">
+          <div id="registry" class="span6">
+            <h3>Registry</h3>
+            <p>
+              We are registered at <a href="http://www.williams-sonoma.com/registry/3119715/registry-list.html">
+              Williams Sonoma</a> and
+              <a href="http://www.crateandbarrel.com/Gift-Registry/Jessie-Pastore-and-Lucas-Hrabovsky/r4995644">
+                Crate &amp; Barrel</a>.
+            </p>
+          </div>
+          <div id="contact" class="span6">
+            <h3>Feel free to contact us with questions!</h3>
+            <p>
+              <a href="mailto:jess.pastore@gmail.com">Jess Pastore<a/> &amp;
+              <a href="mailto:hrabovsky.lucas@gmail.com">Lucas Hrabovsky</a>
+            </p>
+            <p>
+              Check back soon for Pittsburgh trivia, and an explanation for our ridiculous love of owls.
+            </p>
+          </div>
+        </div>
       </div>
-      <a class="btn linebreak" href="#top"><i class="icon-upload icon-white"></i></a>
 
     </div> <!-- /container -->
     <script src="http://twitter.github.io/bootstrap/assets/js/jquery.js"></script>
@@ -432,6 +488,8 @@
                $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 300);
                return false;
             });
+
+            $('.carousel').carousel({interval: 1000});
         </script>
   </body>
 </html>
