@@ -123,7 +123,7 @@
       }
 
       #card {
-        max-width: 702px;
+
       }
 
       .navbar-inner{
@@ -132,10 +132,6 @@
         border-radius: 0;
         background-image: none;
         background-color: #f7f7f7;
-        border: 0;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
       }
 
       .navbar .btn-navbar{
@@ -168,7 +164,6 @@
       }
 
       #hotels .img-polaroid{
-
         overflow: hidden;
       }
 
@@ -179,10 +174,11 @@
         margin-right: 40px;
       }
 
-      #myCarousel {
-        max-height: 500px;
-        min-height: 500px;
-        overflow: hidden;
+      #right-image {
+        float: right;
+      }
+      #bottom-image{
+        display: none;
       }
 
       @media (min-width: 1200px){
@@ -199,15 +195,28 @@
           max-width: 842px;
           margin: auto;
         }
-        #card {
-          max-width: 842px;
+      }
+      @media (max-width: 800px){
+        #right-image{
+          display: none;
+        }
+        #bottom-image{
+          display: block;
+          width: 100%;
+          margin-top: 20px;
+        }
+        #bottom-image img {
+          width: 100%;
+        }
+        .jumbotron img{
+          max-width: none;
         }
       }
     </style>
   </head>
 
   <body>
-    <div class="navbar navbar-fixed-top" id="top">
+    <div class="navbar" id="top">
       <div class="navbar-inner">
         <div class="container-narrow">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -220,28 +229,12 @@
               <li><a href="#wedding">The Wedding</a></li>
               <li><a href="#hotels">Where to Stay</a></li>
               <li><a href="#things-to-do">Things to Do</a></li>
-              <li><a href="#registry">Registry</a></li>
               <li><a href="#transportation">Getting There</a></li>
+              <li><a href="#registry">Registry</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="container-narrow" id="card">
-      <div class="jumbotron img-polaroid">
-        <div style="float: right;">
-          <img src="jandl.jpg" />
-        </div>
-
-        <div style="text-align: center;padding-left: 5%;">
-          <h1 class="heading">Jessie &amp; Lucas<br />are getting married!</h1>
-          <h4>Saturday, September 28th, 2013</h4>
-          <h5>Pittsburgh, PA</h5>
-          <img style="height: 100px;width: auto;margin-top: 20px;" src="logo.png" />
-        </div>
-        <div style="clear: both;"></div>
       </div>
     </div>
 
@@ -256,6 +249,27 @@
     </div> -->
 
     <div class="container-fluid container-narrow" id="main">
+      <div id="card">
+        <div class="jumbotron img-polaroid">
+          <div id="right-image">
+            <img src="jandl.jpg" />
+          </div>
+
+          <div style="text-align: center;padding-left: 5%;">
+            <h1 class="heading">Jessie &amp; Lucas<br />are getting married!</h1>
+            <h4>Saturday, September 28th, 2013</h4>
+            <h5>Pittsburgh, PA</h5>
+            <img style="height: 100px;width: auto;margin-top: 20px;" src="logo.png" />
+          </div>
+
+          <div style="clear: both;"></div>
+
+          <div id="bottom-image">
+            <img src="wilys.jpg" />
+          </div>
+        </div>
+      </div>
+
       <div class="section" id="wedding">
         <div class="row-fluid">
             <h3>The Wedding</h3>
@@ -445,7 +459,7 @@
             });
 
             $("a[href^='#']").on('click', function(e) {
-               $('html, body').animate({ scrollTop: $(this.hash).offset().top - $('#top').height() }, 300);
+               $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 300);
                return false;
             });
 
