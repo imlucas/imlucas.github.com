@@ -205,3 +205,6 @@ body, .navSelector, #feedlyTabs .label {
     margin-bottom: 20px;
 }
 
+.wide #storeClear {
+    margin-top: 45px;
+}
