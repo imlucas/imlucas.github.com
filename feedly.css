@@ -68,6 +68,7 @@
 
 .wide #feedlyTabs > div > div > div.tab > div.header > div.label, .wide #feedlyTabs > div > div > div.tab > div.header > a {
     color: rgba( 0, 0, 0, 0.45 );
+    display: none;
     font-size: 12px;
     line-height: 16px;
 }
@@ -103,10 +104,6 @@
 
 .wide #mainBar {
     margin-left: 240px;
-}
-
-.wide #savedtab, .wide #mytab, .wide #organizetab {
-    display: none;
 }
 
 .wide .label > h2 {
