@@ -1,22 +1,15 @@
 /**
  * https://cloudup.com/c6QGPAHEpzr
+ * end of posts https://cloudup.com/cnDxEDja1UY
  */
-body, .navSelector, #feedlyTabs .label {
-    font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-}
-
-.wide #savedtab, .wide #mytab, .wide #organizetab {
-    display: none;
-}
-
 #feedlyFrame {
     width: 100%;
 }
 
 #feedlyPage {
-    width: 100%;
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
+    width: 100%;
 }
 
 #feedlyPart {
@@ -24,33 +17,37 @@ body, .navSelector, #feedlyTabs .label {
     margin-top: 20px;
 }
 
-.wide .label > h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgba(163, 163, 162, 0.2);
-    display: none;
+#navSelectorHolder {
+    height: auto;
 }
 
-.wide #mainBar {
-    margin-left: 240px;
+.entryBody {
+    font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.45;
+    max-width: none;
+}
+
+.entryBody p {
+    margin-bottom: 30px;
+}
+
+.hhint, h1 {
+    font-family: inherit;
+}
+
+.u100Entry .title {
+    font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 10px;
+    max-width: none;
 }
 
 .wide #feedlyPageHeader {
     margin-top: 10px;
-}
-
-.wide #feedlyTabsHolder {
-    width: 240px;
-    background: #FFFFFF;
-}
-
-.wide #feedlyTabsHolder .notEmpty {
-    color: rgba(68, 68, 68, 1.0);
-    font-weight: normal;
-}
-
-.wide #feedlyTabsHolder .icon {
-    padding-right: 0;
 }
 
 .wide #feedlyTabs {
@@ -59,15 +56,60 @@ body, .navSelector, #feedlyTabs .label {
     padding-right: 0;
 }
 
-#navSelectorHolder {
-    height: auto;
+.wide #feedlyTabs > div {
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.wide #feedlyTabs > div > div > div.tab > div.header > div.label, .wide #feedlyTabs > div > div > div.tab > div.header > a {
+    color: rgba( 0, 0, 0, 0.45 );
+    display: none;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.wide #feedlyTabs > div > div > div.tab > div.header > img.icon {
+    height: 0px;
+}
+
+.wide #feedlyTabsHolder {
+    background: #FFFFFF;
+    width: 240px;
+}
+
+.wide #feedlyTabsHolder .icon {
+    padding-right: 0;
+}
+
+.wide #feedlyTabsHolder .notEmpty {
+    color: rgba(68, 68, 68, 1.0);
+    font-weight: normal;
+}
+
+.wide #floatingBar h1 {
+    border: none;
+}
+
+.wide #mainBar {
+    margin-left: 240px;
+}
+
+.wide #savedtab, .wide #mytab, .wide #organizetab {
+    display: none;
+}
+
+.wide .label > h2 {
+    color: rgba(163, 163, 162, 0.2);
+    display: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .wide .navSelector {
+    border: none;
     margin: 0;
     padding: 0;
     padding-left: 5px;
-    border: none;
     width: 85px;
 }
 
@@ -75,62 +117,74 @@ body, .navSelector, #feedlyTabs .label {
     font-weight: normal;
 }
 
-.wide #feedlyTabs > div {
-    margin-bottom: 1%;
-    margin-top: 1%;
-}
-
-.wide #feedlyTabs > div > div > div.tab > div.header > div.label, .wide #feedlyTabs > div > div > div.tab > div.header > a {
-    font-size: 12px;
-    line-height: 16px;
-    color: rgba( 0, 0, 0, 0.45 );
+.wide .u100Frame .wikiWidget {
     display: none;
-}
-
-.wide #feedlyTabs > div > div > div.tab > div.header > img.icon {
-    height: 0px;
-}
-
-.wide #floatingBar h1 {
-    border: none;
 }
 
 .wide .u100frame {
+    border: none;
     margin: 0;
     padding: 0;
-    border: none;
-}
-
-.entryBody {
-    max-width: none;
-    font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.45;
-}
-
-.entryBody p {
-    margin-bottom: 30px;
-}
-
-.u100Entry .title {
-    font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-    font-weight: 700;
-    margin-top: 10px;
-    font-size: 32px;
-    line-height: 1;
-    max-width: none;
-}
-
-.wide .u100Frame .wikiWidget {
-    display: none;
 }
 
 .wide .u4Entry {
     max-width: none;
 }
 
-.hhint, h1 {
-    font-family: inherit;
+body, .navSelector, #feedlyTabs .label {
+    font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
 }
 
+.wide #sideArea {
+    display: flex;
+    float: none;
+}
+
+.wide .sideAreaModule > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wide .sideAreaModule > div > div {
+    clear: none;
+    padding-right: 5%;
+    min-width: 240px;
+    transition: width 0.7s ease-out;
+    flex-direction: row;
+}
+
+.wide .feedUnreadCount {
+    float: right;
+    color: #888888;
+    margin-left: 0px;
+    height: 16px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 17px;
+    min-width: 0;
+}
+
+.wide #sideArea div.simpleUnreadCount {
+    padding-left: 20px;
+    max-width: none;
+    width: auto;
+}
+
+.wide .sideAreaModule {
+    width: auto;
+    max-width: none;
+}
+
+.bigMarkAsReadButton {
+    height: 50px;
+    padding-top: 100px;
+    background: #FFFFFF url(http://s3.feedly.com/production/16.0/images/icon-markasread-big.png ) 50% 30px no-repeat;
+    -webkit-background-size: 65px 59px;
+    -moz-background-size: 65px 59px;
+    background-size: 65px 59px;
+}
+
+#aboutArea {
+    background: #FFFFFF;
+}
