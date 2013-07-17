@@ -20,6 +20,7 @@ body, .navSelector, #feedlyTabs .label {
     margin-top: 10px;
     margin-bottom: 10px;
     color: rgba(163, 163, 162, 0.2);
+    display: none;
 }
 
 .wide #mainBar {
@@ -120,3 +121,8 @@ body, .navSelector, #feedlyTabs .label {
 .wide .u4Entry {
     max-width: none;
 }
+
+.hhint, h1 {
+    font-family: inherit;
+}
+
