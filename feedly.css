@@ -214,3 +214,50 @@ body, .navSelector, #feedlyTabs .label {
     padding-right: 20px;
 }
 
+.wide #timeline {
+    font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    max-width: none;
+}
+
+.wide .u4Entry .summary {
+    font-size: 21px;
+    line-height: 1.45;
+    color: #707070;
+    max-height: none;
+}
+
+.wide .u4Entry .title{
+    font-size: 28px;
+    line-height: 1.45;
+    font-family: inherit;
+}
+.wide .u5EntryList {
+    display: flex;
+}
+
+.wide .u5EntryList .column {
+    width: 33%;
+}
+
+.wide .u5Entry .visual {
+    width: 100%;
+}
+
+.wide .u5Entry {
+    width: 100%;
+}
+
+.wide .u5EntryList .title {
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.wide .u5EntryList .wikiBar {
+    display: none;
+}
+
+body.wide {
+    background: #FFFFFF;
+}
