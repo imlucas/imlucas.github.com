@@ -5,6 +5,10 @@ body, .navSelector, #feedlyTabs .label {
     font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
 }
 
+.wide #savedtab, .wide #mytab, .wide #organizetab {
+    display: none;
+}
+
 #feedlyFrame {
     width: 100%;
 }
