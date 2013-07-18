@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v2.3.0
+ * Bootstrap v2.3.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -169,7 +169,6 @@ textarea {
   vertical-align: top;
 }
 
-/*
 @media print {
   * {
     color: #000 !important;
@@ -221,7 +220,7 @@ textarea {
     page-break-after: avoid;
   }
 }
-*/
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3008,6 +3007,15 @@ table th[class*="span"],
 
 .open > .dropdown-menu {
   display: block;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
 }
 
 .pull-right > .dropdown-menu {
