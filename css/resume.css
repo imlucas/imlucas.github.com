@@ -1,24 +1,23 @@
-body{
-    background: #f5f5f5;
+/**
+ * hide items no longer relevant
+ */
+.deprecated {
+    display: none;
 }
+
+.wip{
+    display: none;
+}
+
 #container {
-    box-shadow: 0px 0px 1px 0px #999;
-    margin: 50px auto 50px auto;
-    padding: 0px 20px;
+/*    margin: 20px auto 20px auto;
+    padding: 0px 20px;*/
     background: #FFFFFF;
 }
-#summary p {
-    margin-bottom: 0;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1.25;
-}
-#recommendations h2, #experience h2, #education h2 {
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-    padding-bottom: 20px;
-    margin-top: 20px;
 
-}
+/**
+ * all of my contact info
+ */
 header {
     margin-bottom: 20px;
 }
@@ -41,12 +40,44 @@ header h2 {
 }
 
 h5 {
-    color: #999;
+    color: #DCDCDC;
     border-bottom: 1px solid rgba(0,0,0,0.2);
     font-size: 12px;
 }
 
-#experience p, #education p {
+.vcard .photo {
+    display: none;
+}
+
+i.skype {
+    background: url(../img/skype-16.png);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    opacity: 0.4;
+    display: inline-block;
+}
+
+#recommendations h2,
+#experience h2,
+#education h2,
+#projects h2 {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+#summary p {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+
+#experience p,
+#education p {
     margin-bottom: 0;
     font-size: 17.5px;
     font-weight: 300;
@@ -54,14 +85,21 @@ h5 {
     margin-bottom: 10px;
 }
 
-
-#experience article, #education article, #recommendations article {
+#experience article,
+#education article,
+#recommendations article {
     margin-bottom: 40px;
 }
 
-#experience article:before, #experience article:after,
-#education article:before, #education article:after,
-#recommendations article:before, #recommendations article:after {
+/**
+ * clear fix.
+ */
+#experience article:before,
+#experience article:after,
+#education article:before,
+#education article:after,
+#recommendations article:before,
+#recommendations article:after {
     display: table;
     line-height: 0;
     content: "";
@@ -74,13 +112,30 @@ h5 {
 }
 
 
-#experience aside.meta ul li:nth-child(1), #education aside.meta ul li:nth-child(1) {
+#experience aside.meta ul li:nth-child(1),
+#education aside.meta ul li:nth-child(1) {
     font-style: italic;
 }
 
-#experience aside.meta ul li:nth-child(2), #education aside.meta ul li:nth-child(2) {
+#experience aside.meta ul li:nth-child(2),
+#education aside.meta ul li:nth-child(2) {
     font-weight: bold;
 }
+
+.github{
+    top: 0;
+    right: 10px;
+    z-index: 10;
+    padding: 10px 50px 10px 10px;
+    color: #fff;
+    background: url('http://exfm.github.com/node-mambo/images/blacktocat.png') #1077c7 no-repeat 95% 50%;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    white-space: nowrap;
+}
+
 
 footer {
     margin-bottom: 10px;
@@ -102,30 +157,10 @@ footer li {
     margin-bottom: 20px;
 }
 
-.github{
-    display: block;
-    top: 0;
-    right: 10px;
-    z-index: 10;
-    padding: 10px 50px 10px 10px;
-    color: #fff;
-    background: url('http://exfm.github.com/node-mambo/images/blacktocat.png') #1077c7 no-repeat 95% 50%;
-    font-weight: 700;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    width: 100px;
-}
-
-.languages {
-    clear: both;
-}
-
+/**
+ * nice clean print to PDF overrides
+ */
 @media print {
-    body{
-        background: #FFFFFF;
-    }
-
     #education {
         page-break-after:always;
     }
@@ -141,5 +176,27 @@ footer li {
         color: #333;
     }
 
-    article {page-break-inside:avoid;}
+    .span* {
+        float: left;
+    }
+}
+
+/**
+ * switch to single column
+ */
+@media (max-width: 800px){
+    #container{
+        max-width: 800px;
+    }
+    header.vcard .span3{
+/*        clear: both;
+        text-align: center;
+        width: 100%;
+        border: 1px solid #999;
+        font-size: 18px;
+        line-height: 21px;
+        float: none;
+        box-shadow: 0px 1px 2px 2px rgba(204, 204, 204, 0.6);
+        padding: 20px;*/
+    }
 }

@@ -99,14 +99,14 @@
   display: none !important;
 }
 
-@media print {
+/*@media print {
   .visible-print {
     display: inherit !important;
   }
   .hidden-print {
     display: none !important;
   }
-}
+}*/
 
 @media (min-width: 1200px) {
   .row {
