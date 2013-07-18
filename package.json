@@ -1,0 +1,31 @@
+{
+    "name": "imlucas.github.com",
+    "version": "0.0.0",
+    "dependencies": {},
+    "devDependencies": {
+        "mott": "git://github.com/imlucas/mott.git"
+    },
+    "mott": {
+        "recipe": {
+            "build": [
+                "js",
+                "less",
+                "pages"
+            ],
+            "run": [
+                "build",
+                "dev server",
+                "watch"
+            ],
+            "deploy": [
+                "build",
+                "deploy to github"
+            ],
+            "metadata": {
+                "js": {},
+                "less": {},
+                "includes": {}
+            }
+        }
+    }
+}
