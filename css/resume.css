@@ -122,6 +122,10 @@ i.skype {
     font-weight: bold;
 }
 
+#projects article {
+    min-height: 100px;
+}
+
 .github{
     top: 0;
     right: 10px;
