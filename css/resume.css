@@ -39,6 +39,10 @@ header h2 {
     line-height: 60px;
 }
 
+header.vcard aside {
+    float: right;
+}
+
 h5 {
     color: #DCDCDC;
     border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -162,41 +166,20 @@ footer li {
 }
 
 /**
- * nice clean print to PDF overrides
- */
-@media print {
-    #education {
-        page-break-after:always;
-    }
-
-    #container {
-        box-shadow: 0px 0px 0px 0px #FFF;
-        margin: 0px;
-        padding: 0px;
-        background: #FFFFFF;
-    }
-
-    a {
-        color: #333;
-    }
-
-    .span* {
-        float: left;
-    }
-}
-
-/**
  * switch to single column
  */
 @media (max-width: 800px){
     #container{
         max-width: 800px;
     }
+    header.vcard article {
+        float: left;
+    }
     header h1 {
         font-size: 28px;
         line-height: 32px;
     }
-    header h2 {
+    header.vcard h2 {
         font-size: 18px;
         line-height: 21px;
     }
@@ -220,5 +203,32 @@ footer li {
         float: none;
         box-shadow: 0px 1px 2px 2px rgba(204, 204, 204, 0.6);
         padding: 20px;*/
+    }
+}
+
+/**
+ * nice clean print to PDF overrides
+ */
+@media print {
+/*    #education {
+        page-break-after:always;
+    }*/
+
+    #container {
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF;
+    }
+
+    a {
+        color: #333;
+    }
+    header h1 {
+        font-size: 54px;
+        line-height: 60px;
+    }
+
+    header h2 {
+        line-height: 60px;
     }
 }
