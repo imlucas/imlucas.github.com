@@ -192,6 +192,19 @@ footer li {
     #container{
         max-width: 800px;
     }
+    header h1 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    header h2 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    header aside ul{
+        margin: 0 0 10px 0;
+    }
+
     header.vcard .span3{
 /*        clear: both;
         text-align: center;
