@@ -205,6 +205,11 @@ footer li {
         margin: 0 0 10px 0;
     }
 
+    #experience aside li{
+        display: inline;
+        padding-right: 10px;
+    }
+
     header.vcard .span3{
 /*        clear: both;
         text-align: center;
