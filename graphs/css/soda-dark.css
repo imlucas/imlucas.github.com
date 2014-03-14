@@ -1,0 +1,46 @@
+/**
+  Soda Dark: https://github.com/mrlundis/Monokai-Dark-Soda.tmTheme/blob/master/Monokai%20Dark%20Soda.tmTheme
+
+  <key>background</key>
+  <string>#242424</string>
+  <key>caret</key>
+  <string>#F8F8F0</string>
+  <key>foreground</key>
+  <string>#F8F8F2</string>
+  <key>invisibles</key>
+  <string>#3B3A32</string>
+  <key>lineHighlight</key>
+  <string>#3D3D3D55</string>
+  <key>selection</key>
+  <string>#403d3d</string>
+*/
+.soda-dark .creek {
+  font-family: 'PT Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #F8F8F2;
+  background: #242424;
+}
+
+.soda-dark .creek .line {
+  fill: none;
+  stroke: #F8F8F0;
+  stroke-width: 2px;
+}
+
+.soda-dark .creek .area {
+  fill: #403d3d;
+}
+.soda-dark .creek .axis {
+  fill: #F8F8F2;
+}
+.soda-dark .creek text {
+  color: #F8F8F2;
+  font-size: 10px;
+}
+
+.soda-dark .creek .tick line{
+  z-index: -1;
+  stroke: #F8F8F2;
+  stroke-width: 1px;
+  stroke-dasharray: 1 1;
+  opacity: 0.2;
+}

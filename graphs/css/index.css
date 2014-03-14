@@ -1,0 +1,32 @@
+@import "default.css";
+@import "mms.css";
+@import "soda-dark.css";
+body{
+  padding: 0;
+  margin: 0;
+}
+  /**
+  Colors:
+  - red: #ec514e
+  - mid gray: #373435
+  - dark gray: #3f4041
+  - text for dark gray: #c6c8c8
+
+  .topcoat-list {
+  border-top: 1px solid #333434;
+  border-bottom: 1px solid #616363;
+  background-color: #454646;
+  }
+
+  .topcoat-list__header {
+  padding: 4px 20px;
+  font-size: 0.9em;
+  font-weight: 400;
+  background-color: #3f4041;
+  color: #c6c8c8;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+*/
+

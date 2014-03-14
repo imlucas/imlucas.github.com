@@ -1,0 +1,42 @@
+.creek {
+  font-family: 'PT Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #494747;
+}
+
+.creek .line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.creek .area {
+  fill: #000;
+}
+
+.creek path.domain {
+  fill: none;
+  stroke: none;
+}
+
+.creek text {
+  color: #000;
+  font-size: 10px;
+}
+
+.creek .axis {
+  fill: #000;
+}
+
+.creek .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.creek .tick line{
+  z-index: -1;
+  stroke: #CCC;
+  stroke-width: 1px;
+  stroke-dasharray: 1 1;
+  shape-rendering: crispEdges;
+}
