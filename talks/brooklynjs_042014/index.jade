@@ -1,0 +1,89 @@
+doctype html
+html(lang='en')
+  head
+    title stand-alone executables
+    link(rel='stylesheet', href='index.css')
+    // link(href="http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400,400italic,600", rel="stylesheet")
+  body
+    .showtime
+      .container
+        #title
+          h1.h1 stand-alone executables
+        #main
+          section
+            h2.h2.mb2 1. download file
+            h2.h2 2. do stuff
+
+
+          section
+            h2.h2.mb2 le' demo
+            .mt1.mb2: pre: code
+              | # backup slow wifi plan!
+              | lone;
+            strike: pre: code
+              | # make stand-alone and publish GitHub release
+              | npm install --save-dev lone
+              | `npm bin`/lone --release --mail=where@jed.is
+
+
+          section
+            pre
+              code
+                | // To allow people to extend Node in different ways, this
+                | // hook allows one to drop a file lib/_third_party_main.js
+                | // into the build directory which will be executed instead
+                | // of Node's normal loading.
+                | NativeModule.require('_third_party_main');
+
+          section
+            h2.h2.mb2 bakin' binaries
+            ol
+              li fetch node source
+              li add _third_party_main.js to node.gyp and build
+              li jam everything into a zip file && cat node binary
+
+          section#07-runnin-binaries
+            h2.h2.mb2 runnin' it
+            ol
+              li read yourself until you see ZIP_MAGIC (the bundle)
+              li extract to a temp directory and run from there
+              p.ml2.small.aside * lol im just a self extracting zip
+
+          section#07-node-links
+            h2 node projects
+            a(href='http://github.com/imlucas/lone', target='_blank') lone
+            a(href='https://github.com/rogerwang/node-webkit', target='_blank') node-webkit
+            a(href='https://github.com/mapbox/node-pre-gyp', target='_blank') node-pre-gyp
+            a(href='https://github.com/crcn/nexe', target='_blank') nexe
+
+          section#08-python-links
+            h2 learn from python
+            a(href='https://github.com/cloudmatrix/esky', target='_blank') esky
+            a(href='https://github.com/jaredks/rumps', target='_blank') rumps
+            a(href='http://pyinstaller.org', target='_blank') pyinstaller
+            a(href='http://py2exe.org', target='_blank') py2exe
+
+          section
+            h2 @todo
+            .h3.mb1
+              strike tests
+              | &nbsp;more tests
+            .h3.mb1 windows
+            .h3.mb1 gulp-ify
+            .h3.mb1 pipeline - toolchain
+
+          section
+            h1.h1.mb3 thanks
+            .row
+              div(style="width: 15rem; display: inline-block;float: left;")
+                  // img(src='https://pbs.twimg.com/profile_images/453366560455794688/sG8SKhkg.jpeg', width='100%')
+                  img(src='lsdcats.jpg', width='100%')
+              h2.h2.mt2
+                font.meow <3
+                | @lsdcats
+
+      #no-mans-land
+        div &nbsp;
+      #controls
+        .pull-tab ⇧⌘F
+    script(src="index.js")
