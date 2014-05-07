@@ -1,0 +1,305 @@
+doctype html
+html(lang='en')
+  head
+    title npm + browserify
+    link(rel='stylesheet', href='index.css')
+    // link(href="http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400,400italic,600", rel="stylesheet")
+  body
+    .showtime
+      .container
+        #title
+          h2 js you should
+          h2.mb4 know about
+          h1.h1 npm + browserify
+
+        #main
+          section
+            ul
+              li npm
+              li patterns
+              li browserify
+              li write some code
+              li answer questions
+          section
+            .h1 npm
+          section
+            h2 npm
+            //- .h3 terrible name
+            h3 everything is a package, not just js for node
+            .right-align.small.mid-gray *not to be confused with www.npm.org
+
+          section
+            h2 the registry
+            ul.mt4
+              li versioned metadata + tarball
+              li couchdb
+
+          section
+            h2 npm -h
+            ul.mt4
+              li command-line tool
+              //- li lots of good stuff for consumers and producers
+              li package manager and runner
+
+          section
+            h3.mono → package.json
+            ul.mt4
+              //- li metadata that gets stored in the registry
+              li basics
+                ul
+                  li name, version, description
+              li special
+                ul
+                  li dependencies, bin, scripts
+          section
+            h3.mono virtualenv by default
+            ul.mt4
+              li globals = bad
+              li each dep has it's own node_modules
+
+          section
+            h3.mono npm home express
+            ul.mt4
+              li → look up the express package, open browser
+
+          section
+            h3.mono npm ls
+            ul.mt4
+              li → list installed packages
+
+          section
+            h3.mono npm install -s toTitlecase
+            ul.mt4
+              li → install mocha, add it to deps
+
+          section
+            pre.h3.mono alias yay="npm test &&\
+              | npm version patch &&\
+              | npm publish &&\
+              | git push origin --tags"
+
+          section
+            .h1 patterns
+
+          section
+            h2 you'll see a lot of
+            ul
+              li.mono.mb4 require('thing')
+              li.mono.mb4 module.exports = function(){};
+              li.mono.mb4 function(err, res)
+
+          section
+            h3.mono require('thing')
+            ul
+              li synchronous
+              li.mt4
+                .mono require('thing'); →
+                ul
+                  li stdlib? node module?
+              li.mt4
+                .mono require('./thing'); →
+                ul
+                  li ./thing.js? ./thing/index.js?
+          section
+            h3.mono require('thing')
+            ul.mt4
+              li run in a sandbox, `module`
+              //- - aka dont need to wrap everything in a `function(process){...}(process);`
+              li  define the  public api
+            p.mt4: a(href='http://nodejs.org/docs/latest/api/modules.html#modules_module_exports') magic
+
+          section
+            h3.mono module.exports = function(){};
+            ul
+              li.mb4 how do i use this thing?
+              li.mono require('thing').toString()
+            //- - if this module could do one thing what would it be?
+            //- - example: statsd-node. Wut?
+
+          section
+            h3.mono function(err, res)
+            ul
+              li always be async'ing.
+              li in your face if something fails
+
+          section
+            h3 example
+            :markdown
+              ```
+                var fs = require('fs');
+                // doublin` - read a README with double vision
+                module.exports = function(opts, fn){
+                  fs.readFile(opts.path || './README.md', function(err, buf){
+                    if(err) return fn(err);
+                    fn(null, Buffer.concat([buf, buf]);
+                  });
+                };
+              ```
+
+          section
+            h3 but you ugly
+            :markdown
+              ```
+                var fs = require('fs')
+                module.exports = *function(opts){
+                  var buf = yield read(opts.path || './README.md');
+                  return Buffer.concat([buf, buf]);
+                };
+              ```
+
+          section
+            h3.mono --harmony
+            ul.mt2
+              li soon we'll have generators with jetpacks
+              li.mono npm home co
+
+          section
+            .h1: a(href='http://browserify.org', target='_blank') browserify
+
+          section
+            h3 browserify
+            ul.mt2
+              li made by wizards/hobbits
+              li just need 1 code style
+              li lots of hammers already on npm
+
+          section
+            h3 browserify.bundle
+            ol.mt2
+              li parse ast of entry point
+              li build dag
+              li source dependencies
+              li serialize dag + sources
+
+          section
+            h3 hi front-end developers.
+            ul.mt2
+              li scope enforced for you
+              li dependencyhelllollloll
+              li it's ok to split your code into lots of files!
+
+          section
+            h3 <img src="fire.png" /> pre-bundled deps must die
+            //- every time jquery/bootstrap/ACE checked into a repo a pony loses it's wings
+
+            :markdown
+              ```bash
+              npm install --save jquery\
+                https://github.com/twbs/bootstrap/archive/v3.1.1.tar.gz;
+              ```
+
+              ```index.js
+              require('bootstrap/js/dropdown.js');
+              window.jQuery = require('jquery');
+              ```
+
+          section
+            h3 too much to cover in one sitting
+            ul.mt2
+              li
+                a(href='https://github.com/substack/node-browserify/wiki/list-of-transforms') transforms
+                |&nbsp;jadeify, es6ify
+              li
+                a(href='https://www.npmjs.org/search?q=browserify') shims
+                | &nbsp;→ node stdlib api's for browsers
+                ul.mt2
+                  li (fs, crypto, etc)
+
+          section
+            .h1 modules
+
+          section
+            h3 Why modules?
+            ul.mt2
+              li business in one place
+              li test and forget
+              li reuse all over the place
+              li weird and interesting things will happen!
+              //- (Hmm replicate over webrtc data channels?)
+
+          section
+            h3 two cases
+            ul
+              li want to use that code over there
+              li someone else could use this
+
+          section
+            h3 over there
+            ul.mt2
+              li namespace_string.cpp
+              //- li lots of rules i want to use in scope server
+              //- li oh and let's make the ui put specialish db names at the bottom!
+              li want logic in&nbsp;
+                span.mono mongoscope
+              li workflow: copy paste + find all and replace
+
+          section
+            :markdown
+              ```javascript
+              // npm install mongodb-ns
+              var ns = require('mongodb-ns);
+              ns('local.oplog.rs').oplog // true
+              ns('local.oplog.$main').oplog // true
+              ns('$Dataface$.users').validDatabase // false
+
+              console.log(ns('canadian-things.songs-aboot-bacon'));
+              // {ns: 'canadian-things.songs-aboot-bacon',
+              //   dotIndex: 15,
+              //   database: 'canadian-things',
+              //   collection: 'songs-aboot-bacon',
+              //   system: false,
+              //   oplog: false,
+              //   command: false,
+              //   special: false,
+              //   normal: true,
+              //   validDatabaseName: true,
+              //   validCollectionName: true,
+              //   databaseHash: 23620443216}
+
+              ```
+
+          section
+            h3 "here use this"
+            ul.mt2
+              li made some business for security
+              li scattered across models and jade mixins
+              li "hey we're adding this to mms"
+              li workflow: README first then populate API blocks
+
+          section
+            p.mono mongodb-security.md
+
+          section
+            h3 treasure hunt
+            ul
+              li not enough time to run in kernel today :(
+              li.mono MongoRunner....
+              li drivers, mtools, everywhere
+          section
+            .h1.mid-gray thanks
+
+        //- ### setup
+        //- @todo: put everything in a repo and publish to npm. Browserify + gulp etc. should this go before modules so people can really follow along?
+
+
+        //- 1. `npm install -g jsontool`
+        //- 1. `npm install --save-dev mocha`
+        //- 1. `echo '{"scripts": {"test": "mocha"}}' >> package.json | json -I -f package.json --deep-merge`
+
+        //- ### setup 2
+
+        //- 1. `npm install -g imlucas/guzzle && guz`
+        //- 1. `guz ui graphs && npm install --save d3 && echo "console.log('hiya', require('d3'));" > index.js && echo '<html><body><h1>word</h1><script src="index.js"></script></body></html>' > index.html && npm start`
+
+        //- ### what else?
+
+        //- - not enough time to run in kernel today :(
+
+        //- ## questions
+
+      #no-mans-land
+        div &nbsp;
+      #controls
+        .pull-tab ⇧⌘F
+        .pull-tab ⌘F1
+    script(src="index.js")

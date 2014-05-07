@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><title>npm + browserify</title><link rel="stylesheet" href="index.css"><!-- link(href="http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400,400italic,600", rel="stylesheet")--></head><body><div class="showtime"><div class="container"><div id="title"><h2>js you should</h2><h2 class="mb4">know about</h2><h1 class="h1">npm + browserify</h1></div><div id="main"><section><ul><li>npm</li><li>patterns</li><li>browserify</li><li>write some code</li><li>answer questions</li></ul></section><section><div class="h1">npm</div></section><section><h2>npm</h2><h3>everything is a package, not just js for node</h3><div class="right-align small mid-gray">*not to be confused with www.npm.org</div></section><section><h2>the registry</h2><ul class="mt4"><li>versioned metadata + tarball</li><li>couchdb</li></ul></section><section><h2>npm -h</h2><ul class="mt4"><li>command-line tool</li><li>package manager and runner</li></ul></section><section><h3 class="mono">→ package.json</h3><ul class="mt4"><li>basics<ul><li>name, version, description</li></ul></li><li>special<ul><li>dependencies, bin, scripts</li></ul></li></ul></section><section><h3 class="mono">virtualenv by default</h3><ul class="mt4"><li>globals = bad</li><li>each dep has it's own node_modules</li></ul></section><section><h3 class="mono">npm home express</h3><ul class="mt4"><li>→ look up the express package, open browser</li></ul></section><section><h3 class="mono">npm ls</h3><ul class="mt4"><li>→ list installed packages</li></ul></section><section><h3 class="mono">npm install -s toTitlecase</h3><ul class="mt4"><li>→ install mocha, add it to deps</li></ul></section><section><pre class="h3 mono">alias yay="npm test &&\
+npm version patch &&\
+npm publish &&\
+git push origin --tags"</pre></section><section><div class="h1">patterns</div></section><section><h2>you'll see a lot of</h2><ul><li class="mono mb4">require('thing')</li><li class="mono mb4">module.exports = function(){};</li><li class="mono mb4">function(err, res)</li></ul></section><section><h3 class="mono">require('thing')</h3><ul><li>synchronous</li><li class="mt4"><div class="mono">require('thing'); →</div><ul><li>stdlib? node module?</li></ul></li><li class="mt4"><div class="mono">require('./thing'); →</div><ul><li>./thing.js? ./thing/index.js?</li></ul></li></ul></section><section><h3 class="mono">require('thing')</h3><ul class="mt4"><li>run in a sandbox, `module`</li><li> define the  public api</li></ul><p class="mt4"><a href="http://nodejs.org/docs/latest/api/modules.html#modules_module_exports">magic</a></p></section><section><h3 class="mono">module.exports = function(){};</h3><ul><li class="mb4">how do i use this thing?</li><li class="mono">require('thing').toString()</li></ul></section><section><h3 class="mono">function(err, res)</h3><ul><li>always be async'ing.</li><li>in your face if something fails</li></ul></section><section><h3>example</h3><pre><code>  var fs = require(&#39;fs&#39;);
+  // doublin` - read a README with double vision
+  module.exports = function(opts, fn){
+    fs.readFile(opts.path || &#39;./README.md&#39;, function(err, buf){
+      if(err) return fn(err);
+      fn(null, Buffer.concat([buf, buf]);
+    });
+  };
+</code></pre></section><section><h3>but you ugly</h3><pre><code>  var fs = require(&#39;fs&#39;)
+  module.exports = *function(opts){
+    var buf = yield read(opts.path || &#39;./README.md&#39;);
+    return Buffer.concat([buf, buf]);
+  };
+</code></pre></section><section><h3 class="mono">--harmony</h3><ul class="mt2"><li>soon we'll have generators with jetpacks</li><li class="mono">npm home co</li></ul></section><section><div class="h1"><a href="http://browserify.org" target="_blank">browserify</a></div></section><section><h3>browserify</h3><ul class="mt2"><li>made by wizards/hobbits</li><li>just need 1 code style</li><li>lots of hammers already on npm</li></ul></section><section><h3>browserify.bundle</h3><ol class="mt2"><li>parse ast of entry point</li><li>build dag</li><li>source dependencies</li><li>serialize dag + sources</li></ol></section><section><h3>hi front-end developers.</h3><ul class="mt2"><li>scope enforced for you</li><li>dependencyhelllollloll</li><li>it's ok to split your code into lots of files!</li></ul></section><section><h3><img src="fire.png" /> pre-bundled deps must die</h3><pre><code class="lang-bash">npm install --save jquery\
+  https://github.com/twbs/bootstrap/archive/v3.1.1.tar.gz;
+</code></pre>
+<pre><code class="lang-index.js">require(&#39;bootstrap/js/dropdown.js&#39;);
+window.jQuery = require(&#39;jquery&#39;);
+</code></pre>
+</section><section><h3>too much to cover in one sitting</h3><ul class="mt2"><li><a href="https://github.com/substack/node-browserify/wiki/list-of-transforms">transforms</a>&nbsp;jadeify, es6ify</li><li><a href="https://www.npmjs.org/search?q=browserify">shims</a>&nbsp;→ node stdlib api's for browsers<ul class="mt2"><li>(fs, crypto, etc)</li></ul></li></ul></section><section><div class="h1">modules</div></section><section><h3>Why modules?</h3><ul class="mt2"><li>business in one place</li><li>test and forget</li><li>reuse all over the place</li><li>weird and interesting things will happen!</li></ul></section><section><h3>two cases</h3><ul><li>want to use that code over there</li><li>someone else could use this</li></ul></section><section><h3>over there</h3><ul class="mt2"><li>namespace_string.cpp</li><li>want logic in&nbsp;<span class="mono">mongoscope</span></li><li>workflow: copy paste + find all and replace</li></ul></section><section><pre><code class="lang-javascript">// npm install mongodb-ns
+var ns = require(&#39;mongodb-ns);
+ns(&#39;local.oplog.rs&#39;).oplog // true
+ns(&#39;local.oplog.$main&#39;).oplog // true
+ns(&#39;$Dataface$.users&#39;).validDatabase // false
+
+console.log(ns(&#39;canadian-things.songs-aboot-bacon&#39;));
+// {ns: &#39;canadian-things.songs-aboot-bacon&#39;,
+//   dotIndex: 15,
+//   database: &#39;canadian-things&#39;,
+//   collection: &#39;songs-aboot-bacon&#39;,
+//   system: false,
+//   oplog: false,
+//   command: false,
+//   special: false,
+//   normal: true,
+//   validDatabaseName: true,
+//   validCollectionName: true,
+//   databaseHash: 23620443216}
+</code></pre>
+</section><section><h3>"here use this"</h3><ul class="mt2"><li>made some business for security</li><li>scattered across models and jade mixins</li><li>"hey we're adding this to mms"</li><li>workflow: README first then populate API blocks</li></ul></section><section><p class="mono">mongodb-security.md</p></section><section><h3>treasure hunt</h3><ul><li>not enough time to run in kernel today :(</li><li class="mono">MongoRunner....</li><li>drivers, mtools, everywhere</li></ul></section><section><div class="h1 mid-gray">thanks</div></section></div></div><div id="no-mans-land"><div>&nbsp;</div></div><div id="controls"><div class="pull-tab">⇧⌘F</div><div class="pull-tab">⌘F1</div></div></div><script src="index.js"></script></body></html>
