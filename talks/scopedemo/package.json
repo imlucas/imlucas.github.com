@@ -1,0 +1,25 @@
+{
+  "name": "talks-mongo-052014",
+  "version": "0.0.0",
+  "description": "A talk, yo.",
+  "scripts": {
+    "start": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/imlucas/imlucas.github.com"
+  },
+  "author": "Lucas Hrabovsky",
+  "license": "MIT",
+  "devDependencies": {
+    "ecstatic": "^0.5.1",
+    "node-notifier": "^2.0.4",
+    "gulp-jade": "^0.5.0",
+    "gulp": "^3.6.1",
+    "marked": "^0.3.2",
+    "gulp-less": "^1.2.3",
+    "browserify": "^3.43.0",
+    "vinyl-source-stream": "^0.1.1",
+    "mousetrap": "0.0.1"
+  }
+}

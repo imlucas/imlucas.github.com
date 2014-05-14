@@ -1,0 +1,77 @@
+doctype html
+html(lang='en')
+  head
+    title mongoscope
+    link(rel='stylesheet', href='index.css')
+    // link(href="http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400,400italic,600", rel="stylesheet")
+  body
+    .showtime
+      .container
+        #title
+          h1.h1 mongoscope
+
+        #main
+          section
+            h2.h2 binary that ships with rest of tools
+          section
+            h1.h1.mb4 server
+            h3.h3 node native driver
+            h3.h3 express + socketio + CORS + REST'y goodness
+          section
+            h1.h1.mb4 ui
+            h3.h3 happens to be hosted by rest server
+            h3.h3 bootstrap, backbone, d3 + laundry list
+          section
+            h1.h1.m4 security
+            ul
+              li 1 client === 1 server connection
+              li oauth + kernel security
+          section
+            h1.h1.mb4 packaging
+            ul
+              li will be setup in mci
+              li same deps as kernel
+
+          section
+            h1.h1.mb4 target personas
+            ol
+              li you
+              li just getting started
+          section
+            h1.h1.mb4 next steps
+
+          section
+            h1.h1.mb4 packaging
+            ul
+              li have osx and nix
+              li windows in flight
+
+          section
+            h1.h1.mb4 {{your feature request here}}
+
+          section
+            h1.h1.mb4
+              a(href='http://github.com/10gen/mongoscope') @10gen/mongoscope
+
+        //- - next steps
+        //-   - interviews and figure out what features to actually build
+        //-   - already have builds for osx and nix. tweaking for windows builder now
+        //-   - look and feel
+        //-   - hardening
+        //-   - pretty pretty charts
+        //-   - security/user management
+        //-   - <your feature request here>
+
+
+        //- - target personas: just getting started and Dan.
+        //-   - it's there when you install mongodb
+        //-   - easy to reach for -> no installing extra deps
+        //-   - easy for devops to launch for a team, same as mms agent
+        //-   - could be integrate with automation -> just another component to install
+
+      #no-mans-land
+        div &nbsp;
+      #controls
+        .pull-tab ⇧⌘F
+        .pull-tab ⌘F1
+    script(src="index.js")
