@@ -1,15 +1,26 @@
 slidenumbers: true
 
-
 # Electron at MongoDB
 
-From Webapp to Desktop
+From Web to Desktop
 
 LibertyJS Oct. 1 2016
 
 ^ Welcome
 
-^ Thanks for having me this morning.
+^ Thanks for having me this morning
+
+^ Get a few logistics out of the way first
+
+---
+
+`#libertyjs` `#electron`
+
+@__lucas
+
+^ Tweet about this talk using these hashtags
+
+^ We'll have time for Q&A at the end but feel free to @ me instead or if we run out of time
 
 ---
 
@@ -17,14 +28,34 @@ disclaimer:
 
 ---
 
-@__lucas
+# Agenda
 
-#electron #libertyjs
+- What is MongoDB Compass?
+- What is Electron?
+- Why go from web to desktop?
+- How to get started w/ Electron?
+- Q&A
+
+^ 40 min of talking
+^ 15 min of Q&A at the end
+
 ---
 
-## about:lucas
+# about:lucas
 
 ^ I'm Lucas
+
+^ My desk is in NYC, but most of the time I'm working from home in the Fairmount neighborhood of Philadelphia.
+
+^ Relocated from Brooklyn 2 years ago
+
+---
+
+![inline](./img/mongodb-logo-white.png)
+
+^ Lucas Hrabovsky
+
+^ Senior Software engineer at MongoDB for ~3 years
 
 ^ Founding member of the Compass team at MongoDB
 
@@ -32,26 +63,9 @@ disclaimer:
 
 ---
 
-## Agenda
+## <compass screenshot>
 
-- What is Compass?
-- What is Electron?
-- Why move Compass from web to desktop with Electron?
-- How to get started w/ Electron?
-
----
-
-## MongoDB
-
-`leaf icon`
-
-^ TODO MongoDB leaf
-
----
-
-## Compass
-
-^ TODO Compass screenshot
+^ TODO Grab existing Compass screenshot/gif
 
 ^ New product
 
@@ -63,22 +77,23 @@ disclaimer:
 
 ^ New globally distributed team
 
----
+^ All over the world
 
-## Started as webapp
-
-^ TODO Screenshot of mongoscope
+^ Excited everyone will be in NYC next week
 
 ---
 
-## Switched to Electron
+## Compass: web -> desktop
 
+^ Earliest versions of Compass as web app
+^ Weekend hacking
 ^ May 14th, 2014
 ^ Still called atom-shell
+^ Switched to Electron and haven't looked back
 
 ---
 
-## Electron
+# Electron
 
 ^ TODO Logo for electron
 
@@ -86,7 +101,7 @@ disclaimer:
 
 ---
 
-### Chromium + node.js
+## Chromium + node.js
 
 ^ Chromium: html rendering
 ^ node.js: I/O, ecosystem
@@ -95,15 +110,176 @@ disclaimer:
 
 ---
 
-### Built by GitHub for Atom Editor
+## Built by GitHub for Atom Editor
 
 ^ TODO Logos for gh and Atom
 
 ---
 
-### Single codebase deployed to many platforms
+## Single codebase deployed to many platforms
 
 ^ TODO Platform logos
+
+---
+
+## Electron Early Adopters
+
+- GitHub
+- Slack
+- Microsoft
+
+^ TODO Logos for gh, slack, ms visual studio code
+
+---
+
+# Why go from web to desktop?
+
+^ "Electron gives your app superpowers"
+
+^ Seen enough features, shiny frameworks come and go
+
+^ Compass Team early goals Electron enables
+
+---
+
+### Goal #1
+
+## Keep team small
+
+---
+
+### Single node.js target
+
+^ Single version of node.js to worry about and test against
+
+---
+
+### Single rendering target
+
+^ Just chrome
+
+^ No extra time debugging/tweaking CSS for Internet Explorer, Firefox, etc.
+
+---
+
+### Goal #2
+## Make it awesome
+
+^ Raise bar for user experience
+^ Have complete control
+^ Easy for anyone to try
+^ Working with data in desktop feels natural
+^ Remove compromises
+
+---
+
+### Avoid compromise
+
+^ Integrate with platform specific API's as node.js native add-ons
+
+---
+
+### Example: Keychain Access
+
+- With great data comes high security
+- Plain text passwords just not an option
+- Lots of form inputs required to connect to MongoDB
+- How can we make it dead simple for users to connect securely
+
+---
+
+### Break out of browser security sandbox
+
+---
+
+### Example: Clipboard
+
+`compass connect clipboard screenshot`
+
+^ TODO compass connect clipboard screenshot
+
+- Copy a `mongodb://` URL
+- Compass polls clipboard
+- When `mongodb://` URL detected
+- Parse it
+- Just click ok to populate complicated form
+
+---
+
+### Easy for anyone to try
+
+^ Desktop Apps easier to deploy for Enterprise
+^ No proxy to deploy
+^ No on-prem SaaS that's never updated
+
+---
+
+### Example: Windows Installers
+
+- Don't require administrator to install
+- Individuals in control their own tools
+
+---
+
+## More
+
+---
+
+### System Tray
+
+^ Fast easy access
+^ menubar apps
+
+---
+
+### Screenshot
+
+---
+
+### Process Control
+
+---
+
+### Native Notifications
+
+---
+
+## Getting Started with Electron
+
+---
+
+### http://electron.atom.io
+
+---
+
+^ Electron API Demos App
+
+^ Try for yourself
+
+^ TODO screenshot electron api demos app
+
+---
+
+## Thanks!
+
+- @zcbenz, @kevinsawicki, @jlord, @zeke (Electron team at GitHub)
+- @maxogden and @electron-userland (Essential tooling)
+- @paulcbetts at Slack (Make it all work on Windows, Auto Updates)
+- Evan from Nylas
+
+---
+
+# Q&A
+
+![inline 50%](./img/LjsLogo-2016.png)
+
+## lucas@mongodb.com
+
+---
+
+# :wave:
+
+---
 
 ---
 
@@ -134,20 +310,6 @@ disclaimer:
 
 ---
 
-### Electron Early Adopters
-
-- GitHub
-- Slack
-- Microsoft
-
-^ TODO Logos for gh, slack, ms visual studio code
-
----
-
-### Rise of node.js
-
----
-
 ### Auto Updates
 
 ---
@@ -158,136 +320,4 @@ disclaimer:
 
 ---
 
-## Why not just a webapp?
-
-^ "Electron gives your app superpowers". Ugh...
-
-^ Seen enough features, shiny frameworks come and go
-
-^ This was a business decision
-
-^ Compass Team early goals
-
----
-
-### Keep team small
-
-- Shipped 1.0 w/ 2 engineers
-- Single node.js version target
-- No extra time debugging/tweaking CSS for Internet Explorer, Firefox, etc.
-
----
-
-### User experience
-
-- Have complete control
-- Working with data in desktop feels natural
-- Remove compromises
-
----
-
-### How to remove compromises
-
-- Integrate with platform specific API's as node.js native add-ons
-- Break out of browser security sandbox
-
----
-
-### Example: Keychain Access
-
-- With great data comes high security
-- Plain text passwords just not an option
-- Lots of form inputs required to connect to MongoDB
-- How can we make it dead simple for users to connect securely
-
----
-
-### Example: Clipboard
-
-`compass connect clipboard screenshot`
-
-^ TODO compass connect clipboard screenshot
-
-- Copy a `mongodb://` URL
-- Compass polls clipboard
-- When `mongodb://` URL detected
-- Parse it
-- Just click ok to populate complicated form
-
----
-
-### Desktop Apps easier to deploy for Enterprise
-
-- No proxy to deploy
-- No on-prem SaaS that's never updated
-
----
-
-### Example: Windows Installers
-
-- Don't require administrator to install and try!
-- Individuals in control of their own tools
-
----
-
-## More
-
----
-
-### System Tray
-
-- Fast easy access
-- menubar apps
-
----
-
-### Protocol Handlers
-
-`open mongodb://...`
-
----
-
-### Screenshot
-
----
-
-### Process Control
-
----
-
-### Native Notifications
-
----
-
-## Getting Started with Electron
-
----
-
-### http://electron.atom.io
-
----
-
-### Electron API Demos App
-
-^ TODO screenshot electron api demos app
-
----
-
-## Thanks to Humans
-
-- @zcbenz, @kevinsawicki, @jlord, @zeke (Electron team at GitHub)
-- @maxogden and @electron-userland (Essential tooling)
-- @paulcbetts at Slack (Make it all work on Windows, Auto Updates)
-
-
----
-
-# Q&A
-
-![inline 50%](./img/LjsLogo-2016.png)
-
-## lucas@mongodb.com
-
----
-
-# :wave:
+### Rise of node.js
