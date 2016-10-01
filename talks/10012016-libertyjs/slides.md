@@ -1,10 +1,8 @@
-slidenumbers: true
-
+![right inline filtered 50%](./img/LjsLogo-2016.png)
 # Electron at MongoDB
+## Lucas Hrabovsky
+## LibertyJS, Oct. 1 2016
 
-From Web to Desktop
-
-LibertyJS Oct. 1 2016
 
 ^ Welcome
 
@@ -14,6 +12,8 @@ LibertyJS Oct. 1 2016
 
 ---
 
+<!-- ![fit](./img/twitter-gray.png) -->
+
 `#libertyjs` `#electron`
 
 @__lucas
@@ -22,9 +22,11 @@ LibertyJS Oct. 1 2016
 
 ^ We'll have time for Q&A at the end but feel free to @ me instead or if we run out of time
 
+^ TODO Twitter icon
+
 ---
 
-disclaimer:
+> disclaimer: does not reflect the views of MongoDB Inc.
 
 ---
 
@@ -33,7 +35,6 @@ disclaimer:
 - What is MongoDB Compass?
 - What is Electron?
 - Why go from web to desktop?
-- How to get started w/ Electron?
 - Q&A
 
 ^ 40 min of talking
@@ -49,9 +50,14 @@ disclaimer:
 
 ^ Relocated from Brooklyn 2 years ago
 
+
 ---
 
-![inline](./img/mongodb-logo-white.png)
+> What is MongoDB Compass?
+
+---
+
+![inline fit](./img/mongodb-logo-white.png)
 
 ^ Lucas Hrabovsky
 
@@ -69,6 +75,10 @@ disclaimer:
 
 ^ New product
 
+^ https://www.mongodb.com/compass
+
+^ Built on electron
+
 ---
 
 ## Compass Team
@@ -83,25 +93,54 @@ disclaimer:
 
 ---
 
-## Compass: web -> desktop
+> What if you could write your own browser and everyone had to use it?
 
-^ Earliest versions of Compass as web app
-^ Weekend hacking
-^ May 14th, 2014
-^ Still called atom-shell
-^ Switched to Electron and haven't looked back
+^ Essentially comes down to this question
+^ Instead of serving app via web server
 
 ---
 
 # Electron
 
-^ TODO Logo for electron
+- Desktop apps, web technologies
+- Built by GitHub for Atom Editor
 
-^ Desktop apps using web technologies
+![right inline fit](./img/electron.png)
+
+<!-- ---
+
+# Electron Origin
+
+![right inline fit](./img/atom.png) -->
 
 ---
 
-## Chromium + node.js
+## 1 app :: any platform
+
+- Windows
+- macOS
+- Linux
+
+^ Single codebase deployed to many platforms
+^ TODO Platform logos
+
+---
+
+## Early Adopters
+
+- GitHub
+- Slack
+- Microsoft
+
+^ TODO Logos for gh, slack, ms visual studio code
+
+^ http://electron.atom.io/apps/
+
+---
+
+## chromium + node.js
+
+![inline fit](./img/chromium.png)![inline fit](./img/nodejs.png)
 
 ^ Chromium: html rendering
 ^ node.js: I/O, ecosystem
@@ -110,85 +149,53 @@ disclaimer:
 
 ---
 
-## Built by GitHub for Atom Editor
+## What's in the box
 
-^ TODO Logos for gh and Atom
-
----
-
-## Single codebase deployed to many platforms
-
-^ TODO Platform logos
-
----
-
-## Electron Early Adopters
-
-- GitHub
-- Slack
-- Microsoft
-
-^ TODO Logos for gh, slack, ms visual studio code
+- Native menus & notifications
+- System tray
+- Process control
+- Filesystem access
+- Screenshot
+- Clipboard
+- And much more...
 
 ---
 
-# Why go from web to desktop?
+## Distribution & tooling
 
-^ "Electron gives your app superpowers"
-
-^ Seen enough features, shiny frameworks come and go
-
-^ Compass Team early goals Electron enables
-
----
-
-### Goal #1
-
-## Keep team small
+- Crash reporting
+- Automatic updates
+- Debugging & profiling
+- Installers
 
 ---
 
-### Single node.js target
+http://electron.atom.io
 
-^ Single version of node.js to worry about and test against
-
----
-
-### Single rendering target
-
-^ Just chrome
-
-^ No extra time debugging/tweaking CSS for Internet Explorer, Firefox, etc.
+^ Getting Started with Electron
 
 ---
 
-### Goal #2
-## Make it awesome
+![](./img/electron-api-demos.png)
 
-^ Raise bar for user experience
-^ Have complete control
-^ Easy for anyone to try
-^ Working with data in desktop feels natural
-^ Remove compromises
+^ http://electron.atom.io/#get-started
 
----
+^ Electron API Demos App
 
-### Avoid compromise
-
-^ Integrate with platform specific API's as node.js native add-ons
+^ Try for yourself
 
 ---
 
-### Example: Keychain Access
-
-- With great data comes high security
-- Plain text passwords just not an option
-- Lots of form inputs required to connect to MongoDB
-- How can we make it dead simple for users to connect securely
+> Why not just make it a web app?
 
 ---
 
-### Break out of browser security sandbox
+# Compass: web -> desktop
+
+^ Earliest versions of Compass as web app
+^ Weekend hacking
+^ May 14th, 2014
+^ Switched to Electron and haven't looked back
 
 ---
 
@@ -206,57 +213,29 @@ disclaimer:
 
 ---
 
-### Easy for anyone to try
-
-^ Desktop Apps easier to deploy for Enterprise
-^ No proxy to deploy
-^ No on-prem SaaS that's never updated
+node.js native add-ons to access platform specific API's
 
 ---
 
-### Example: Windows Installers
+### Example: Keychain Access
 
-- Don't require administrator to install
-- Individuals in control their own tools
-
----
-
-## More
+- With great data comes high security
+- Plain text passwords just not an option
+- Lots of form inputs required to connect to MongoDB
+- How can we make it dead simple for users to connect securely
 
 ---
 
-### System Tray
+## Results
 
-^ Fast easy access
-^ menubar apps
+- Small team
+- Happy customers
 
----
+^ Single version of node.js to worry about and test against
+^ Single rendering target. Just chrome. No extra time debugging/tweaking CSS for Internet Explorer, Firefox, etc.
 
-### Screenshot
-
----
-
-### Process Control
-
----
-
-### Native Notifications
-
----
-
-## Getting Started with Electron
-
----
-
-### http://electron.atom.io
-
----
-
-^ Electron API Demos App
-
-^ Try for yourself
-
-^ TODO screenshot electron api demos app
+^ Easy for anyone to try. Desktop Apps easier to deploy for Enterprise
+^ No proxy to deploy. No on-prem SaaS that's never updated
 
 ---
 
@@ -271,15 +250,17 @@ disclaimer:
 
 # Q&A
 
-![inline 50%](./img/LjsLogo-2016.png)
-
 ## lucas@mongodb.com
+
+![inline left 50%](./img/LjsLogo-2016.png)
 
 ---
 
 # :wave:
 
 ---
+
+`</slides>`
 
 ---
 
@@ -310,14 +291,8 @@ disclaimer:
 
 ---
 
-### Auto Updates
-
----
-
 ### Embrace node.js ecosystem, conventions & values
 
 - Independent parties building better tooling!
 
 ---
-
-### Rise of node.js
